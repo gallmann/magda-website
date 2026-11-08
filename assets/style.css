@@ -1,0 +1,946 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,600&family=Raleway:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --bg: #faf9f6;
+  --surface: #ffffff;
+  --surface-alt: #f2f0ea;
+  --text: #3a3a3a;
+  --text-muted: #727272;
+  --text-light: #969696;
+  --teal: #5f7777;
+  --teal-light: #92adad;
+  --teal-pale: #e6f0f0;
+  --rose: #e7a392;
+  --rose-dark: #a86251;
+  --sage: #9dbda8;
+  --sage-pale: #cde4d5;
+  --sand: #d1c38a;
+  --sand-pale: #ede1a1;
+  --border: #e4e1d8;
+  --shadow: 0 8px 28px rgba(45, 55, 55, 0.07);
+  --shadow-sm: 0 2px 10px rgba(45, 55, 55, 0.05);
+  --radius: 6px;
+  --max-width: 980px;
+  --font-sans: 'Raleway', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-serif: 'Cormorant Garamond', 'Times New Roman', Georgia, serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  color: var(--text);
+  background-color: var(--bg);
+  line-height: 1.65;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+a {
+  color: var(--teal);
+  text-decoration: none;
+  transition: color 0.2s ease, opacity 0.2s ease;
+}
+
+a:hover {
+  color: var(--rose-dark);
+}
+
+/* Header & Navigation */
+.site-header {
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0.9rem 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.25rem;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  color: var(--text);
+  font-family: var(--font-serif);
+  font-size: 1.3rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.brand img {
+  width: 34px;
+  height: 34px;
+  object-fit: contain;
+}
+
+.nav-toggle {
+  display: none;
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 0.45rem 0.65rem;
+  cursor: pointer;
+  color: var(--text);
+  font-size: 1.1rem;
+}
+
+.site-nav ul {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 1.05rem;
+  flex-wrap: nowrap;
+}
+
+.site-nav a {
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  padding: 0.35rem 0;
+  position: relative;
+  white-space: nowrap;
+}
+
+.site-nav a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background: var(--teal-light);
+  transition: width 0.25s ease;
+}
+
+.site-nav a:hover,
+.site-nav a.active {
+  color: var(--teal);
+}
+
+.site-nav a:hover::after,
+.site-nav a.active::after {
+  width: 100%;
+}
+
+/* Page Banners & Heroes */
+.page-banner {
+  position: relative;
+  height: 400px;
+  min-height: 280px;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  text-align: center;
+  color: #ffffff;
+  overflow: hidden;
+}
+
+.page-banner:not(.home-hero)::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 38%;
+  background: linear-gradient(to top, rgba(18, 24, 24, 0.48) 0%, transparent 100%);
+  pointer-events: none;
+}
+
+.banner-konzerte {
+  background-position: 42% 45%;
+}
+
+.banner-verschiedenes {
+  background-position: 62% 22%;
+}
+
+.banner-lebenslauf {
+  background-position: center center;
+}
+
+.banner-unterricht {
+  background-position: 60% 30%;
+}
+
+.banner-hoerbeispiele {
+  background-position: 62% 24%;
+}
+
+.banner-links {
+  background-position: 38% 60%;
+}
+
+.page-banner-content {
+  position: relative;
+  z-index: 2;
+  padding: 1.5rem 1.5rem 1.65rem;
+  max-width: 820px;
+}
+
+.page-banner h1 {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 400;
+  font-size: clamp(2.2rem, 5vw, 3.2rem);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  text-shadow: 0 2px 16px rgba(0, 0, 0, 0.35);
+}
+
+/* Home Hero */
+.home-hero {
+  height: 680px;
+  align-items: stretch;
+  background-position: 62% 25%;
+}
+
+.home-hero .page-banner-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 960px;
+  padding: 1.5rem 1.5rem 5.25rem;
+}
+
+.home-hero h1 {
+  font-family: var(--font-serif);
+  font-style: normal;
+  font-size: clamp(2.4rem, 5.5vw, 4.2rem);
+  letter-spacing: 0.24em;
+  text-transform: none;
+  margin-bottom: 0;
+  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.28);
+}
+
+.btn-hero {
+  display: inline-block;
+  background: rgba(146, 173, 173, 0.9);
+  color: #ffffff;
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 0.85rem 2.2rem;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  border-radius: 2px;
+  transition: all 0.25s ease;
+}
+
+.btn-hero:hover {
+  background: var(--teal);
+  color: #ffffff;
+  transform: translateY(-1px);
+}
+
+/* Main Container */
+main {
+  flex: 1;
+}
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 3.5rem 1.5rem;
+}
+
+/* Home Sections */
+.home-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5rem;
+  margin-top: -3.5rem;
+  position: relative;
+  z-index: 5;
+}
+
+.home-card {
+  background: var(--surface);
+  box-shadow: var(--shadow);
+  border-radius: var(--radius);
+  padding: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.home-card-aktuell {
+  border-top: 4px solid var(--teal-light);
+}
+
+.aktuell-badge {
+  display: inline-block;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--teal);
+  margin-bottom: 0.75rem;
+}
+
+.aktuell-date {
+  font-family: var(--font-serif);
+  font-size: 1.65rem;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 0.35rem;
+}
+
+.aktuell-location {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--rose-dark);
+  margin-bottom: 0.65rem;
+}
+
+.aktuell-program {
+  font-size: 0.98rem;
+  color: var(--text-muted);
+  white-space: pre-line;
+  margin-bottom: 1.25rem;
+}
+
+.aktuell-link {
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--teal);
+  align-self: flex-start;
+}
+
+.home-card-about {
+  background: var(--teal-light);
+  color: #ffffff;
+}
+
+.home-card-about h2 {
+  font-family: var(--font-sans);
+  font-size: 1.15rem;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.home-card-about p {
+  font-size: 1.08rem;
+  line-height: 1.75;
+  font-weight: 300;
+}
+
+.home-Listen-banner {
+  margin-top: 2.5rem;
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  background: var(--surface);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+
+.home-nature-photo {
+  background-size: cover;
+  background-position: center;
+  min-height: 320px;
+}
+
+.home-listen-box {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2.5rem;
+  background-size: cover;
+  background-position: center;
+  min-height: 320px;
+  text-align: center;
+}
+
+.home-listen-box::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(35, 45, 45, 0.45);
+  transition: background 0.3s ease;
+}
+
+.home-listen-box:hover::before {
+  background: rgba(35, 45, 45, 0.3);
+}
+
+.home-listen-box a {
+  position: relative;
+  z-index: 2;
+  color: #ffffff;
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 2rem;
+  letter-spacing: 0.1em;
+  border: 1px solid rgba(255, 255, 255, 0.75);
+  padding: 0.8rem 2rem;
+  background: rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(4px);
+}
+
+/* Concerts Page */
+.section-heading {
+  font-family: var(--font-sans);
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--teal);
+  letter-spacing: 0.06em;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.6rem;
+  border-bottom: 2px solid var(--border);
+}
+
+.concerts-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  margin-bottom: 3rem;
+}
+
+.concert-item {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--teal-light);
+  border-radius: var(--radius);
+  padding: 1.4rem 1.75rem;
+  box-shadow: var(--shadow-sm);
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  gap: 1.5rem;
+  align-items: start;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.concert-item:hover {
+  box-shadow: var(--shadow);
+}
+
+.concert-item.upcoming {
+  border-left-color: var(--rose);
+  background: #fffdfb;
+}
+
+.concert-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.concert-date {
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.concert-location {
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--teal);
+}
+
+.concert-body h3 {
+  font-size: 1.08rem;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 0.35rem;
+}
+
+.concert-details {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  white-space: pre-line;
+  line-height: 1.55;
+}
+
+.concert-link {
+  display: inline-block;
+  margin-top: 0.6rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--rose-dark);
+  text-decoration: underline;
+}
+
+.year-group-title {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  margin: 2rem 0 1rem;
+}
+
+/* Verschiedenes & Unterricht Colored Feature Cards */
+.feature-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+  gap: 2rem;
+  margin-top: 1.5rem;
+}
+
+.feature-card {
+  border-radius: var(--radius);
+  padding: 2.5rem 1.75rem;
+  box-shadow: var(--shadow);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 290px;
+  min-width: 0;
+  overflow-wrap: break-word;
+}
+
+.feature-card.color-sage {
+  background: var(--sage-pale);
+  color: #2f3e35;
+}
+
+.feature-card.color-sand {
+  background: var(--sand);
+  color: #2d2a1e;
+}
+
+.feature-card.color-rose {
+  background: var(--rose);
+  color: #ffffff;
+}
+
+.feature-card.color-teal {
+  background: var(--teal-light);
+  color: #ffffff;
+}
+
+.feature-card h3 {
+  font-family: var(--font-sans);
+  font-size: clamp(1.2rem, 3.8vw, 1.5rem);
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+  overflow-wrap: break-word;
+  hyphens: auto;
+}
+
+.feature-card .subtitle {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 1.25rem;
+  margin-bottom: 1.25rem;
+  opacity: 0.9;
+}
+
+.feature-card p,
+.feature-card ul {
+  font-size: 1.02rem;
+  line-height: 1.7;
+  white-space: pre-line;
+  list-style: none;
+}
+
+.feature-card li {
+  margin-bottom: 0.4rem;
+}
+
+/* Biography (Lebenslauf) */
+.bio-card {
+  background: var(--surface);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 3rem;
+  max-width: 820px;
+  margin: 0 auto;
+}
+
+.bio-card h2 {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 2.2rem;
+  color: var(--teal);
+  margin-bottom: 1.5rem;
+}
+
+.bio-card p {
+  margin-bottom: 1.25rem;
+  font-size: 1.03rem;
+  line-height: 1.78;
+  color: var(--text);
+}
+
+.bio-card p:first-of-type {
+  font-size: 1.14rem;
+  font-weight: 500;
+  color: var(--teal);
+}
+
+/* Audio Samples (Hörbeispiele) */
+.album-section {
+  background: var(--surface);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 2.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.album-header {
+  margin-bottom: 1.75rem;
+}
+
+.album-header h2 {
+  font-size: 1.85rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  margin-bottom: 0.4rem;
+}
+
+.album-header p {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 1.3rem;
+  color: var(--text-muted);
+}
+
+.album-grid {
+  display: grid;
+  grid-template-columns: 280px minmax(0, 1fr);
+  gap: 2.25rem;
+  align-items: start;
+}
+
+.album-cover {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 4px;
+  box-shadow: var(--shadow);
+}
+
+.tracks-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  min-width: 0;
+  width: 100%;
+}
+
+.audio-track {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 0.85rem 1.15rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  min-width: 0;
+  width: 100%;
+  transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+.audio-track.playing {
+  border-color: var(--teal);
+  background: var(--teal-pale);
+}
+
+.play-btn {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: none;
+  background: var(--teal);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: background 0.2s ease, transform 0.15s ease;
+}
+
+.play-btn:hover {
+  background: var(--rose-dark);
+  transform: scale(1.05);
+}
+
+.play-btn svg {
+  width: 16px;
+  height: 16px;
+  fill: currentColor;
+}
+
+.track-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.track-title-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-bottom: 0.35rem;
+}
+
+.track-title {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.track-subtitle {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-left: 0.5rem;
+}
+
+.track-time {
+  font-size: 0.8rem;
+  font-variant-numeric: tabular-nums;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+.track-progress {
+  width: 100%;
+  height: 6px;
+  accent-color: var(--teal);
+  cursor: pointer;
+}
+
+/* Links Page */
+.links-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.link-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-top: 3px solid var(--teal-light);
+  border-radius: var(--radius);
+  padding: 1.75rem;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-width: 0;
+  overflow-wrap: break-word;
+}
+
+.link-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow);
+}
+
+.link-card h3 {
+  font-size: 1.15rem;
+  color: var(--teal);
+  margin-bottom: 0.5rem;
+}
+
+.link-card p {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  margin-bottom: 1rem;
+}
+
+.link-card span {
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--rose-dark);
+}
+
+/* Footer */
+.site-footer {
+  background: var(--surface);
+  border-top: 1px solid var(--border);
+  padding: 2.75rem 1.5rem;
+  margin-top: auto;
+}
+
+.footer-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.5rem;
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 1.05rem;
+  color: var(--text-muted);
+}
+
+.footer-contact p {
+  margin-bottom: 0.2rem;
+}
+
+.footer-social {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-family: var(--font-sans);
+  font-style: normal;
+  font-size: 0.85rem;
+}
+
+.footer-social a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--text-muted);
+  padding: 0.45rem 0.9rem;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+}
+
+.footer-social a:hover {
+  color: var(--teal);
+  border-color: var(--teal-light);
+}
+
+.footer-admin-link {
+  font-size: 0.78rem;
+  opacity: 0.55;
+}
+
+.footer-admin-link:hover {
+  opacity: 1;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .nav-toggle {
+    display: block;
+  }
+
+  .site-nav {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    padding: 1rem 1.5rem;
+    box-shadow: var(--shadow);
+  }
+
+  .site-nav.open {
+    display: block;
+  }
+
+  .site-nav ul {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+
+  .container {
+    padding: 2rem 1rem;
+  }
+
+  .page-banner {
+    height: 280px;
+    min-height: 220px;
+  }
+
+  .page-banner h1 {
+    font-size: clamp(1.5rem, 6.5vw, 2.2rem);
+    letter-spacing: 0.08em;
+    overflow-wrap: break-word;
+  }
+
+  .home-grid,
+  .home-Listen-banner,
+  .album-grid,
+  .concert-item {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .home-grid {
+    margin-top: 1.5rem;
+  }
+
+  .home-hero {
+    height: 430px;
+    background-position: 64% center;
+  }
+
+  .home-hero .page-banner-content {
+    padding: 1.25rem 1rem 2rem;
+  }
+
+  .home-hero h1 {
+    font-size: clamp(1.65rem, 6.5vw, 2.4rem);
+    letter-spacing: 0.12em;
+  }
+
+  .home-card,
+  .album-section,
+  .concert-item,
+  .feature-card,
+  .bio-card {
+    padding: 1.35rem 1.15rem;
+  }
+
+  .album-cover {
+    max-width: 100%;
+  }
+
+  .audio-track {
+    padding: 0.75rem 0.85rem;
+    gap: 0.75rem;
+  }
+
+  .track-title-row {
+    flex-wrap: wrap;
+    gap: 0.2rem 0.5rem;
+  }
+
+  .track-subtitle {
+    display: block;
+    margin-left: 0;
+  }
+}

@@ -1,0 +1,32 @@
+name: Rebuild Static HTML on Content Update
+
+on:
+  push:
+    branches: ["main"]
+    paths:
+      - "data/content.json"
+      - "build.py"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  rebuild-html:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Build static HTML from data/content.json
+        run: python3 build.py
+
+      - name: Commit regenerated HTML if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if ! git diff --quiet; then
+            git add index.html konzerte/ verschiedenes/ lebenslauf/ unterricht/ hoerbeispiele/ links/
+            git commit -m "Regenerate static HTML pages from content.json"
+            git push
+          fi

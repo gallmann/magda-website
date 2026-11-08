@@ -1,0 +1,1483 @@
+{
+  "site": {
+    "title": "Magda Schwerzmann",
+    "subtitle": "Querflöte · Traversflöte · Kammermusik · Pädagogik",
+    "location": "Winterthur",
+    "contact": {
+      "name": "Magda Schwerzmann",
+      "street": "Jonas-Furrerstrasse 82",
+      "city": "8400 Winterthur",
+      "email": "info@magda-schwerzmann.ch",
+      "emailDisplay": "info(at)magda-schwerzmann.ch",
+      "phone": "079 664 83 87",
+      "facebookUrl": "https://www.facebook.com/profile.php?id=100005173755310"
+    }
+  },
+  "home": {
+    "heroTitle": "Magda Schwerzmann",
+    "heroImage": "/assets/images/hero-home.jpg",
+    "heroButtonLabel": "Konzertdaten",
+    "aktuellMode": "manual",
+    "aktuellConcert": {
+      "label": "Aktuell:",
+      "dateDisplay": "26. Januar 2026, 20.00 Uhr",
+      "location": "Kirche Peter-Paul in Winterthur",
+      "program": "Musik aus Südamerika für Flöte und Gitarre",
+      "note": "Eintritt frei, Kollekte"
+    },
+    "secondaryImage": "/assets/images/home-nature.jpg",
+    "aboutTitle": "ÜBER MICH",
+    "aboutText": "Magda Schwerzmann ist Dozentin an der Musikhochschule Bern (HKB), am Konservatorium Winterthur & MS St.Gallen, unterrichtet Querflöte, Traversflöte, Fachdidaktik und Kammermusik.",
+    "listenTitle": "Hier Hören",
+    "listenImage": "/assets/images/manhattanite-edited.jpg"
+  },
+  "concerts": [
+    {
+      "id": "concert-01-2026-06-28",
+      "dateIso": "2026-06-28",
+      "time": "17:00",
+      "dateDisplay": "28. Juni 2026, 17.00 Uhr",
+      "rawLines": [
+        "28. Juni 2026, 17.00 Uhr",
+        "KKL Luzern",
+        "mit dem Collegiumm Musicum",
+        "Werk: Haydn Schöpfung",
+        "unter der Leitung von Eberhard Rex"
+      ],
+      "location": "KKL Luzern",
+      "title": "mit dem Collegiumm Musicum",
+      "details": "Werk: Haydn Schöpfung\nunter der Leitung von Eberhard Rex",
+      "linkUrl": "",
+      "linkLabel": ""
+    },
+    {
+      "id": "concert-02-2026-05-10",
+      "dateIso": "2026-05-10",
+      "time": "17:00",
+      "dateDisplay": "10. Mai 2026, in Payerne, 17.00,",
+      "rawLines": [
+        "10. Mai 2026, in Payerne, 17.00,",
+        "G.F.Händel: Judas Maccabaeus HWV 63",
+        "Orchester mit historischen Instrumenten",
+        "Chor Pro Arte Lausanne",
+        "unter der Leitung von Pascal Meyer"
+      ],
+      "location": "G.F.Händel: Judas Maccabaeus HWV 63",
+      "title": "Orchester mit historischen Instrumenten",
+      "details": "Chor Pro Arte Lausanne\nunter der Leitung von Pascal Meyer",
+      "linkUrl": "",
+      "linkLabel": ""
+    },
+    {
+      "id": "concert-03-2026-05-09",
+      "dateIso": "2026-05-09",
+      "time": "19:30",
+      "dateDisplay": "9. Mai 2026, in Bex, 19.30",
+      "rawLines": [
+        "9. Mai 2026, in Bex, 19.30",
+        "G.F.Händel: Judas Maccabaeus HWV 63",
+        "Orchester mit historischen Instrumenten",
+        "Chor Pro Arte Lausanne",
+        "unter der Leitung von Pascal Meyer"
+      ],
+      "location": "G.F.Händel: Judas Maccabaeus HWV 63",
+      "title": "Orchester mit historischen Instrumenten",
+      "details": "Chor Pro Arte Lausanne\nunter der Leitung von Pascal Meyer",
+      "linkUrl": "",
+      "linkLabel": ""
+    },
+    {
+      "id": "concert-04-2026-04-20",
+      "dateIso": "2026-04-20",
+      "time": "10:30",
+      "dateDisplay": "20. April 2026, 10.30 Uhr",
+      "rawLines": [
+        "20. April 2026, 10.30 Uhr",
+        "Fraumünster Kirche in Zürich",
+        "Frauenehrung der Gesellschaft zu Fraumünster",
+        "Magda Schwerzmann, Flöte"
+      ],
+      "location": "Fraumünster Kirche in Zürich",
+      "title": "Frauenehrung der Gesellschaft zu Fraumünster",
+      "details": "Magda Schwerzmann, Flöte",
+      "linkUrl": "",
+      "linkLabel": ""
+    },
+    {
+      "id": "concert-05-2026-04-03",
+      "dateIso": "2026-04-03",
+      "time": "19:30",
+      "dateDisplay": "3. April 2026, 19.30 Uhr",
+      "rawLines": [
+        "3. April 2026, 19.30 Uhr",
+        "Jesuiten Kirche in Luzern",
+        "Collegium Musicum"
+      ],
+      "location": "Jesuiten Kirche in Luzern",
+      "title": "Collegium Musicum",
+      "details": "",
+      "linkUrl": "",
+      "linkLabel": ""
+    },
+    {
+      "id": "concert-06-2026-01-26",
+      "dateIso": "2026-01-26",
+      "time": "20:00",
+      "dateDisplay": "26. Januar 2026, 20.00 Uhr",
+      "rawLines": [
+        "26. Januar 2026, 20.00 Uhr",
+        "Kirche Peter-Paul, Winterthur",
+        "Südamerikanische Musik",
+        "Magda Schwerzmann, Flöte",
+        "Edmauro de Oliveira , Gitarre"
+      ],
+      "location": "Kirche Peter-Paul, Winterthur",
+      "title": "Südamerikanische Musik",
+      "details": "Magda Schwerzmann, Flöte\nEdmauro de Oliveira , Gitarre",
+      "linkUrl": "",
+      "linkLabel": ""
+    },
+    {
+      "id": "concert-07-2025-12-24",
+      "dateIso": "2025-12-24",
+      "time": "23:00",
+      "dateDisplay": "24. Dezember 2025, 23.00 Uhr",
+      "rawLines": [
+        "24. Dezember 2025, 23.00 Uhr",
+        "Katholische Kirche Wettingen",
+        "Weihnachtsmusik",
+        "Magda Schwerzmann, Flöte"
+      ],
+      "location": "Katholische Kirche Wettingen",
+      "title": "Weihnachtsmusik",
+      "details": "Magda Schwerzmann, Flöte",
+      "linkUrl": "",
+      "linkLabel": ""
+    },
+    {
+      "id": "concert-08-2025-12-18",
+      "dateIso": "2025-12-18",
+      "time": "16:00",
+      "dateDisplay": "18. Dezember 2025, 16.00 Uhr",
+      "rawLines": [
+        "18. Dezember 2025, 16.00 Uhr",
+        "Serenade im Alterszentrum Zug",
+        "Magda Schwerzmann, Flöte",
+        "Edmauro de Oliveira, Gitarre"
+      ],
+      "location": "Serenade im Alterszentrum Zug",
+      "title": "Magda Schwerzmann, Flöte",
+      "details": "Edmauro de Oliveira, Gitarre",
+      "linkUrl": "",
+      "linkLabel": ""
+    },
+    {
+      "id": "concert-09-2025-11-21",
+      "dateIso": "2025-11-21",
+      "time": "19:00",
+      "dateDisplay": "21. November 2025, 19.00 Uhr",
+      "rawLines": [
+        "21. November 2025, 19.00 Uhr",
+        "Grosser Saal, Konservatorium Winterthur",
+        "Rezital im Rahmen der Facettenkonzerte",
+        "Magda Schwerzmann, Flöte",
+        "Elizabeth Buck, Flöte",
+        "Annette Birkenmeier, Violine",
+        "Paula Häni, Viola",
+        "Alejandro Cho, Klavier",
+        "Werke von Beethoven, Reger & Doppler"
+      ],
+      "location": "Grosser Saal, Konservatorium Winterthur",
+      "title": "Rezital im Rahmen der Facettenkonzerte",
+      "details": "Magda Schwerzmann, Flöte\nElizabeth Buck, Flöte\nAnnette Birkenmeier, Violine\nPaula Häni, Viola\nAlejandro Cho, Klavier\nWerke von Beethoven, Reger & Doppler",
+      "linkUrl": "",
+      "linkLabel": ""
+    },
+    {
+      "id": "concert-10-2025-11-01",
+      "dateIso": "2025-11-01",
+      "time": "09:30",
+      "dateDisplay": "1. November 2025, 9.30 Uhr",
+      "rawLines": [
+        "1. November 2025, 9.30 Uhr",
+        "Grosser Saal, Konservatorium Winterthur",
+        "Konzert im Rahmen von \"Tag der alten Musik\"",
+        "Lina Stahel, Blockflöte",
+        "Magda Schwerzmann, Traverso",
+        "Stephen Moran, Cembalo",
+        "Werk: A.Dornel, Trio-Sonate",
+        "Link: https://konservatorium.ch/veranstaltungen-uebersicht/"
+      ],
+      "location": "Grosser Saal, Konservatorium Winterthur",
+      "title": "Konzert im Rahmen von \"Tag der alten Musik\"",
+      "details": "Lina Stahel, Blockflöte\nMagda Schwerzmann, Traverso\nStephen Moran, Cembalo\nWerk: A.Dornel, Trio-Sonate\nLink: https://konservatorium.ch/veranstaltungen-uebersicht/",
+      "linkUrl": "https://konservatorium.ch/veranstaltungen-uebersicht/",
+      "linkLabel": "https://konservatorium.ch/veranstaltungen-uebersicht/"
+    },
+    {
+      "id": "concert-11-2025-04-28",
+      "dateIso": "2025-04-28",
+      "time": "10:30",
+      "dateDisplay": "28. April 2025, 10.30 Uhr",
+      "rawLines": [
+        "28. April 2025, 10.30 Uhr",
+        "Fraumünster Kirche in Zürich",
+        "Frauenehrung der Gesellschaft zu Fraumünster",
+        "Rahel Cunz, Violine",
+        "Magda Schwerzmann, Flöte",
+        "Werke von Telemann, Mozart, Bartok, und einen Tango"
+      ],
+      "location": "Fraumünster Kirche in Zürich",
+      "title": "Frauenehrung der Gesellschaft zu Fraumünster",
+      "details": "Rahel Cunz, Violine\nMagda Schwerzmann, Flöte\nWerke von Telemann, Mozart, Bartok, und einen Tango",
+      "linkUrl": "",
+      "linkLabel": ""
+    },
+    {
+      "id": "concert-12-2025-04-20",
+      "dateIso": "2025-04-20",
+      "time": "17:00",
+      "dateDisplay": "20. April 2025, Jesuitenkirche, 17.00",
+      "rawLines": [
+        "20. April 2025, Jesuitenkirche, 17.00",
+        "Orchester Collegium Musicum Luzern, Orchester mit historischen Instrumenten",
+        "J.S.Bach: Oster-Oratorium"
+      ],
+      "location": "Orchester Collegium Musicum Luzern, Orchester mit historischen Instrumenten",
+      "title": "J.S.Bach: Oster-Oratorium",
+      "details": "",
+      "linkUrl": "",
+      "linkLabel": ""
+    },
+    {
+      "id": "concert-13-2025-04-18",
+      "dateIso": "2025-04-18",
+      "time": "15:00",
+      "dateDisplay": "18. April 2025, Kirche Abbatial Payerne, 15.00",
+      "rawLines": [
+        "18. April 2025, Kirche Abbatial Payerne, 15.00",
+        "Johannespassion von J.S.Bach",
+        "Orchestre avec des instruments historiques",
+        "Dirigent: Pascal Meyer"
+      ],
+      "location": "Johannespassion von J.S.Bach",
+      "title": "Orchestre avec des instruments historiques",
+      "details": "Dirigent: Pascal Meyer",
+      "linkUrl": "",
+      "linkLabel": ""
+    },
+    {
+      "id": "concert-14-2025-03-03",
+      "dateIso": "2025-03-03",
+      "time": "19:00",
+      "dateDisplay": "3. März 2025, 19.00 Uhr",
+      "rawLines": [
+        "3. März 2025, 19.00 Uhr",
+        "Baur au Lac, Zürich",
+        "Brasilianische Musik",
+        "Magda Schwerzmann, Querflöte",
+        "Edmauro Oliveira, Gitarre"
+      ],
+      "location": "Baur au Lac, Zürich",
+      "title": "Brasilianische Musik",
+      "details": "Magda Schwerzmann, Querflöte\nEdmauro Oliveira, Gitarre",
+      "linkUrl": "",
+      "linkLabel": ""
+    },
+    {
+      "id": "concert-15-2024-12-19",
+      "dateIso": "2024-12-19",
+      "time": "10:00",
+      "dateDisplay": "19. Dezember 2024, 10.00 Uhr",
+      "rawLines": [
+        "19. Dezember 2024, 10.00 Uhr",
+        "Alterszentrum Embrach",
+        "Martin de Vargas, Orgel",
+        "Magda Schwerzmann, Flöte"
+      ],
+      "location": "Alterszentrum Embrach",
+      "title": "Martin de Vargas, Orgel",
+      "details": "Magda Schwerzmann, Flöte",
+      "linkUrl": "",
+      "linkLabel": ""
+    },
+    {
+      "id": "concert-16-2024-11-01",
+      "dateIso": "2024-11-01",
+      "time": "18:00",
+      "dateDisplay": "1. November 2024 Musik und Stille, 18.00 Uhr",
+      "rawLines": [
+        "1. November 2024 Musik und Stille, 18.00 Uhr",
+        "Zendo, Bürgenstrasse 36, Luzern",
+        "Rezital",
+        "Magda Schwerzmann, Flöten"
+      ],
+      "location": "Zendo, Bürgenstrasse 36, Luzern",
+      "title": "Rezital",
+      "details": "Magda Schwerzmann, Flöten",
+      "linkUrl": "",
+      "linkLabel": ""
+    },
+    {
+      "id": "concert-17-2024-08-25",
+      "dateIso": "2024-08-25",
+      "time": "17:00",
+      "dateDisplay": "25.August 2024, Jesuitenkirche, 17.00",
+      "rawLines": [
+        "25.August 2024, Jesuitenkirche, 17.00",
+        "Orchester Collegium Musicum Luzern, Orchester mit historischen Instrumenten",
+        "Puccini-Messe"
+      ],
+      "location": "Orchester Collegium Musicum Luzern, Orchester mit historischen Instrumenten",
+      "title": "Puccini-Messe",
+      "details": "",
+      "linkUrl": "",
+      "linkLabel": ""
+    },
+    {
+      "id": "concert-18-2024-04-15",
+      "dateIso": "2024-04-15",
+      "time": "10:00",
+      "dateDisplay": "15. April 2024, 10.00 Uhr",
+      "rawLines": [
+        "15. April 2024, 10.00 Uhr",
+        "Fraumünster Kirche in Zürich",
+        "Frauenehrung der Gesellschaft zu Fraumünster",
+        "Elisabeth Trechslin, Gitarre",
+        "Magda Schwerzmann, Flöte"
+      ],
+      "location": "Fraumünster Kirche in Zürich",
+      "title": "Frauenehrung der Gesellschaft zu Fraumünster",
+      "details": "Elisabeth Trechslin, Gitarre\nMagda Schwerzmann, Flöte",
+      "linkUrl": "",
+      "linkLabel": ""
+    },
+    {
+      "id": "concert-19-2024-03-10",
+      "dateIso": "2024-03-10",
+      "time": "15:00",
+      "dateDisplay": "10. März 2024,15.00 Uhr",
+      "rawLines": [
+        "10. März 2024,15.00 Uhr",
+        "Arizona Bach Days in Phoenix",
+        "Werke von J.S.Bach: h-moll Suite,",
+        "G.Ph.Telemann: Konzert für 2 Flöten, C-Dur",
+        "Magda Schwerzmann, Flöte",
+        "Elizabeth Buck, Flöte"
+      ],
+      "location": "Arizona Bach Days in Phoenix",
+      "title": "Werke von J.S.Bach: h-moll Suite,",
+      "details": "G.Ph.Telemann: Konzert für 2 Flöten, C-Dur\nMagda Schwerzmann, Flöte\nElizabeth Buck, Flöte",
+      "linkUrl": "",
+      "linkLabel": ""
+    },
+    {
+      "id": "concert-20-2023-12-21",
+      "dateIso": "2023-12-21",
+      "time": "16:00",
+      "dateDisplay": "21. Dezember 2023, 16.00 Uhr",
+      "rawLines": [
+        "21. Dezember 2023, 16.00 Uhr",
+        "Weihnachtsmusik,",
+        "Alterszentrum Herti Zug",
+        "Magda Schwerzmann, Querflöte",
+        "Elisabeth Trechslin, Gitarre"
+      ],
+      "location": "Weihnachtsmusik,",
+      "title": "Alterszentrum Herti Zug",
+      "details": "Magda Schwerzmann, Querflöte\nElisabeth Trechslin, Gitarre",
+      "linkUrl": "",
+      "linkLabel": ""
+    },
+    {
+      "id": "concert-21-2023-11-26",
+      "dateIso": "2023-11-26",
+      "time": "10:00",
+      "dateDisplay": "26. November 2023, 10.00 Uhr",
+      "rawLines": [
+        "26. November 2023, 10.00 Uhr",
+        "Lassalle-Haus, Bad Schönbrunn",
+        "Magda Schwerzmann, Querflöte und Traverso"
+      ],
+      "location": "Lassalle-Haus, Bad Schönbrunn",
+      "title": "Magda Schwerzmann, Querflöte und Traverso",
+      "details": "",
+      "linkUrl": "",
+      "linkLabel": ""
+    },
+    {
+      "id": "concert-22-2023-04-17",
+      "dateIso": "2023-04-17",
+      "time": "10:00",
+      "dateDisplay": "17. April 2023, 10.00 Uhr",
+      "rawLines": [
+        "17. April 2023, 10.00 Uhr",
+        "Fraumünster Kirche in Zürich",
+        "Frauenehrung der Gesellschaft zu Fraumünster",
+        "Magda Schwerzmann, Flöte",
+        "Elisabeth Trechslin, Gitarre"
+      ],
+      "location": "Fraumünster Kirche in Zürich",
+      "title": "Frauenehrung der Gesellschaft zu Fraumünster",
+      "details": "Magda Schwerzmann, Flöte\nElisabeth Trechslin, Gitarre",
+      "linkUrl": "",
+      "linkLabel": ""
+    },
+    {
+      "id": "concert-23-2023-04-07",
+      "dateIso": "2023-04-07",
+      "time": "10:00",
+      "dateDisplay": "7. April 2023, 10.00 Uhr",
+      "rawLines": [
+        "7. April 2023, 10.00 Uhr",
+        "Kirche Lufingen",
+        "Flöte und Orgel",
+        "Magda Schwerzmann, Flöte",
+        "Martin de Vargas, Orgel"
+      ],
+      "location": "Kirche Lufingen",
+      "title": "Flöte und Orgel",
+      "details": "Magda Schwerzmann, Flöte\nMartin de Vargas, Orgel",
+      "linkUrl": "",
+      "linkLabel": ""
+    },
+    {
+      "id": "concert-24-2023-04-06",
+      "dateIso": "2023-04-06",
+      "time": "10:00",
+      "dateDisplay": "6. April 2023, 10.00 Uhr",
+      "rawLines": [
+        "6. April 2023, 10.00 Uhr",
+        "Alterszentrum Lufingen",
+        "Flöte und Klavier",
+        "Magda Schwerzmann, Flöte",
+        "Martin de Vargas, Klavier"
+      ],
+      "location": "Alterszentrum Lufingen",
+      "title": "Flöte und Klavier",
+      "details": "Magda Schwerzmann, Flöte\nMartin de Vargas, Klavier",
+      "linkUrl": "",
+      "linkLabel": ""
+    },
+    {
+      "id": "concert-25-2023-03-12",
+      "dateIso": "2023-03-12",
+      "time": "16:00",
+      "dateDisplay": "12. März 2023, 16.00 Uhr",
+      "rawLines": [
+        "12. März 2023, 16.00 Uhr",
+        "Phoenix, Arizona, USA",
+        "J.S.Bach Magnifikat",
+        "mit Phoenix Bach-Gesellschaft",
+        "Dirigent: Scott Youngs"
+      ],
+      "location": "Phoenix, Arizona, USA",
+      "title": "J.S.Bach Magnifikat",
+      "details": "mit Phoenix Bach-Gesellschaft\nDirigent: Scott Youngs",
+      "linkUrl": "",
+      "linkLabel": ""
+    },
+    {
+      "id": "concert-26-2023-03-05",
+      "dateIso": "2023-03-05",
+      "time": "16:00",
+      "dateDisplay": "5. März 2023,",
+      "rawLines": [
+        "5. März 2023,",
+        "Kirche Plaffeien, 16.00 Uhr",
+        "Dirigent: Pascal Meyer",
+        "Werk: u.a. Boismortier, Mendelssohn,..."
+      ],
+      "location": "Kirche Plaffeien, 16.00 Uhr",
+      "title": "Dirigent: Pascal Meyer",
+      "details": "Werk: u.a. Boismortier, Mendelssohn,...",
+      "linkUrl": "",
+      "linkLabel": ""
+    },
+    {
+      "id": "concert-27-2022-12-25",
+      "dateIso": "2022-12-25",
+      "time": "09:30",
+      "dateDisplay": "25. Dezember 2022",
+      "rawLines": [
+        "25. Dezember 2022",
+        "Kirche Hünenberg ZG, 9.30 Uhr",
+        "Solistin: Magda Schwerzmann, Querflöte",
+        "Dirigent: David Schneider",
+        "Werk: W.A.Mozart, Flötenkonzert in G-Dur"
+      ],
+      "location": "Kirche Hünenberg ZG, 9.30 Uhr",
+      "title": "Solistin: Magda Schwerzmann, Querflöte",
+      "details": "Dirigent: David Schneider\nWerk: W.A.Mozart, Flötenkonzert in G-Dur",
+      "linkUrl": "",
+      "linkLabel": ""
+    },
+    {
+      "id": "concert-28-2022-12-15",
+      "dateIso": "2022-12-15",
+      "time": "",
+      "dateDisplay": "15. Dezember 2022, 10 Uhr",
+      "rawLines": [
+        "15. Dezember 2022, 10 Uhr",
+        "Embrach, Alterszentrum",
+        "Magda Schwerzmann, Querflöte",
+        "Orgel: Martin de Vargas",
+        "Werke von Bach und Händel"
+      ],
+      "location": "Embrach, Alterszentrum",
+      "title": "Magda Schwerzmann, Querflöte",
+      "details": "Orgel: Martin de Vargas\nWerke von Bach und Händel",
+      "linkUrl": "",
+      "linkLabel": ""
+    },
+    {
+      "id": "concert-29-2022-11-27",
+      "dateIso": "2022-11-27",
+      "time": "17:00",
+      "dateDisplay": "27. November 2022",
+      "rawLines": [
+        "27. November 2022",
+        "Kirche Cham ZG, 17.00 Uhr",
+        "Solistin: Magda Schwerzmann, Querflöte",
+        "Dirigent: David Schneider",
+        "W.A.Mozart, Flötenkonzert in G-Dur"
+      ],
+      "location": "Kirche Cham ZG, 17.00 Uhr",
+      "title": "Solistin: Magda Schwerzmann, Querflöte",
+      "details": "Dirigent: David Schneider\nW.A.Mozart, Flötenkonzert in G-Dur",
+      "linkUrl": "",
+      "linkLabel": ""
+    },
+    {
+      "id": "concert-30-2022-11-26",
+      "dateIso": "2022-11-26",
+      "time": "20:00",
+      "dateDisplay": "26. November 2022",
+      "rawLines": [
+        "26. November 2022",
+        "Kirche Hünenberg ZG, 20.00 Uhr",
+        "Solistin: Magda Schwerzmann, Querflöte",
+        "Dirigent: David Schneider",
+        "W.A.Mozart, Flötenkonzert in G-Dur"
+      ],
+      "location": "Kirche Hünenberg ZG, 20.00 Uhr",
+      "title": "Solistin: Magda Schwerzmann, Querflöte",
+      "details": "Dirigent: David Schneider\nW.A.Mozart, Flötenkonzert in G-Dur",
+      "linkUrl": "",
+      "linkLabel": ""
+    },
+    {
+      "id": "concert-31-2022-11-11",
+      "dateIso": "2022-11-11",
+      "time": "20:00",
+      "dateDisplay": "11. November 2022 Kirche Peter & Paul Winterthur, 20.00 Uhr",
+      "rawLines": [
+        "11. November 2022 Kirche Peter & Paul Winterthur, 20.00 Uhr",
+        "\"Musik und Stille\"",
+        "Magda Schwerzmann, Querflöte",
+        "Hans-Ueli Bamert, Orgel",
+        "Kollekte"
+      ],
+      "location": "\"Musik und Stille\"",
+      "title": "Magda Schwerzmann, Querflöte",
+      "details": "Hans-Ueli Bamert, Orgel\nKollekte",
+      "linkUrl": "",
+      "linkLabel": ""
+    },
+    {
+      "id": "concert-32-2022-10-23",
+      "dateIso": "2022-10-23",
+      "time": "17:00",
+      "dateDisplay": "23. Oktober 2022, St.Ursen-Kathedrale Solothurn, 17.00",
+      "rawLines": [
+        "23. Oktober 2022, St.Ursen-Kathedrale Solothurn, 17.00",
+        "Werke: Carl Rütti, Bruder Klaus Messe, Frank Martin, Et la vie l’emporta Cantate de chambre",
+        "Orchester Collegium Musicum Luzern"
+      ],
+      "location": "Werke: Carl Rütti, Bruder Klaus Messe, Frank Martin, Et la vie l’emporta Cantate de chambre",
+      "title": "Orchester Collegium Musicum Luzern",
+      "details": "",
+      "linkUrl": "",
+      "linkLabel": ""
+    },
+    {
+      "id": "concert-33-2022-10-16",
+      "dateIso": "2022-10-16",
+      "time": "17:00",
+      "dateDisplay": "16. Oktober 2022, Kathedrale Lausanne, 17.00",
+      "rawLines": [
+        "16. Oktober 2022, Kathedrale Lausanne, 17.00",
+        "Werke: Carl Rütti, Bruder Klaus Messe, Frank Martin, Et la vie l’emporta Cantate de chambre",
+        "Orchester Collegium Musicum Luzern"
+      ],
+      "location": "Werke: Carl Rütti, Bruder Klaus Messe, Frank Martin, Et la vie l’emporta Cantate de chambre",
+      "title": "Orchester Collegium Musicum Luzern",
+      "details": "",
+      "linkUrl": "",
+      "linkLabel": ""
+    },
+    {
+      "id": "concert-34-2022-10-07",
+      "dateIso": "2022-10-07",
+      "time": "19:00",
+      "dateDisplay": "7. Oktober 2022, Konservatorium Winterthur, 19.00",
+      "rawLines": [
+        "7. Oktober 2022, Konservatorium Winterthur, 19.00",
+        "Rezital im Rahmen der Facettenkonzerte",
+        "Auf den Spuren von Willy Burkhard und seiner Liebe zur Flöte",
+        "Magda Schwerzmann, Flöte",
+        "& Ensemble Varietas:",
+        "Elisabeth Trechslin, Gitarre",
+        "Annette Birkenmeier, Viola",
+        "Andrea Sutter, Cello",
+        "Elizabeth Buck, Flöte",
+        "Tamara Chitadze, Klavier"
+      ],
+      "location": "Rezital im Rahmen der Facettenkonzerte",
+      "title": "Auf den Spuren von Willy Burkhard und seiner Liebe zur Flöte",
+      "details": "Magda Schwerzmann, Flöte\n& Ensemble Varietas:\nElisabeth Trechslin, Gitarre\nAnnette Birkenmeier, Viola\nAndrea Sutter, Cello\nElizabeth Buck, Flöte\nTamara Chitadze, Klavier",
+      "linkUrl": "",
+      "linkLabel": ""
+    },
+    {
+      "id": "concert-35-2022-09-25",
+      "dateIso": "2022-09-25",
+      "time": "11:00",
+      "dateDisplay": "25. September 2022, 11.00 Uhr Winterthur,",
+      "rawLines": [
+        "25. September 2022, 11.00 Uhr Winterthur,",
+        "Konzert im grossen Saal des Konservatoriums",
+        "mit 10 Uraufführungen von Flötenwerken der Kompositionsklasse von Roman Digion",
+        "Flötenlehrkräfte aller 3 Musikschulen von Winterthur"
+      ],
+      "location": "Konzert im grossen Saal des Konservatoriums",
+      "title": "mit 10 Uraufführungen von Flötenwerken der Kompositionsklasse von Roman Digion",
+      "details": "Flötenlehrkräfte aller 3 Musikschulen von Winterthur",
+      "linkUrl": "",
+      "linkLabel": ""
+    },
+    {
+      "id": "concert-36-2022-09-24",
+      "dateIso": "2022-09-24",
+      "time": "19:30",
+      "dateDisplay": "24. September 2022, 19.30 Uhr, Hombrechtikon",
+      "rawLines": [
+        "24. September 2022, 19.30 Uhr, Hombrechtikon",
+        "Operette: \"Die lustige Witwe\", von Franz Lehar.",
+        "Adhoc Orchester, Dirigent Caspar Dechmann"
+      ],
+      "location": "Operette: \"Die lustige Witwe\", von Franz Lehar.",
+      "title": "Adhoc Orchester, Dirigent Caspar Dechmann",
+      "details": "",
+      "linkUrl": "",
+      "linkLabel": ""
+    },
+    {
+      "id": "concert-37-2022-09-24",
+      "dateIso": "2022-09-24",
+      "time": "16:30",
+      "dateDisplay": "24. September 2022, Konservatorium Winterthur,",
+      "rawLines": [
+        "24. September 2022, Konservatorium Winterthur,",
+        "2. Winterthurer Flötentag (4. Verschiebedatum)",
+        "Samstag: Workshops für alle",
+        "Konzert mit allen, um 16.30 Uhr",
+        "Infos & Anmeldung: info@konservatorium.ch"
+      ],
+      "location": "2. Winterthurer Flötentag (4. Verschiebedatum)",
+      "title": "Samstag: Workshops für alle",
+      "details": "Konzert mit allen, um 16.30 Uhr\nInfos & Anmeldung: info@konservatorium.ch",
+      "linkUrl": "mailto:info@konservatorium.ch",
+      "linkLabel": "info@konservatorium.ch"
+    },
+    {
+      "id": "concert-38-2022-09-07",
+      "dateIso": "2022-09-07",
+      "time": "14:30",
+      "dateDisplay": "7. September 2022, Alterszentrum Herti Zug, 14.30 Uhr",
+      "rawLines": [
+        "7. September 2022, Alterszentrum Herti Zug, 14.30 Uhr",
+        "Magda Schwerzmann, Flöten, Traverso, Qena, Hümmelchen",
+        "Elisabeth Trechslin, Gitarre, Laute"
+      ],
+      "location": "Magda Schwerzmann, Flöten, Traverso, Qena, Hümmelchen",
+      "title": "Elisabeth Trechslin, Gitarre, Laute",
+      "details": "",
+      "linkUrl": "",
+      "linkLabel": ""
+    },
+    {
+      "id": "concert-39-2022-08-28",
+      "dateIso": "2022-08-28",
+      "time": "17:00",
+      "dateDisplay": "28. August 2022, Jesuitenkirche Luzern, 17.00 Uhr",
+      "rawLines": [
+        "28. August 2022, Jesuitenkirche Luzern, 17.00 Uhr",
+        "Joh. S. Bach, Kyrie 233 a in F-Dur & Gloria in excelsis Deo BWV 191, Sanctus in C-Dur BWV 237",
+        "Collegium Musicum Luzern",
+        "Orchester für alte Musik mit historischen Instrumenten"
+      ],
+      "location": "Joh. S. Bach, Kyrie 233 a in F-Dur & Gloria in excelsis Deo BWV 191, Sanctus in C-Dur BWV 237",
+      "title": "Collegium Musicum Luzern",
+      "details": "Orchester für alte Musik mit historischen Instrumenten",
+      "linkUrl": "",
+      "linkLabel": ""
+    },
+    {
+      "id": "concert-40-2022-08-25",
+      "dateIso": "2022-08-25",
+      "time": "19:00",
+      "dateDisplay": "25. August 2022, Kirche Cernier NE, 19.00 Uhr",
+      "rawLines": [
+        "25. August 2022, Kirche Cernier NE, 19.00 Uhr",
+        "Orchestre Les Jardins Musicaux,",
+        "Dirigent Lennart Dohms",
+        "Orchester für alte Musik mit historischen Instrumenten"
+      ],
+      "location": "Orchestre Les Jardins Musicaux,",
+      "title": "Dirigent Lennart Dohms",
+      "details": "Orchester für alte Musik mit historischen Instrumenten",
+      "linkUrl": "",
+      "linkLabel": ""
+    },
+    {
+      "id": "concert-41-2022-05-26",
+      "dateIso": "2022-05-26",
+      "time": "17:00",
+      "dateDisplay": "26. Mai 2022, Flötenmusik in der Jesuitenkirche, 17.00 Uhr",
+      "rawLines": [
+        "26. Mai 2022, Flötenmusik in der Jesuitenkirche, 17.00 Uhr",
+        "Jesuitenkirche Luzern",
+        "Gottesdienst mit Musik von",
+        "Magda Schwerzmann, Flöten",
+        "Mutsumi Ueno, Orgel",
+        "Werke von Widor, Demersseman, Donjon, Fauré"
+      ],
+      "location": "Jesuitenkirche Luzern",
+      "title": "Gottesdienst mit Musik von",
+      "details": "Magda Schwerzmann, Flöten\nMutsumi Ueno, Orgel\nWerke von Widor, Demersseman, Donjon, Fauré",
+      "linkUrl": "",
+      "linkLabel": ""
+    },
+    {
+      "id": "concert-42-2022-05-26",
+      "dateIso": "2022-05-26",
+      "time": "10:00",
+      "dateDisplay": "26. Mai 2022, 10.00 Uhr, Kirche Luzern",
+      "rawLines": [
+        "26. Mai 2022, 10.00 Uhr, Kirche Luzern",
+        "Ensemble Corund, Ensemble mit alten Instrumenten",
+        "J.S.Bach, Kantate BWV11"
+      ],
+      "location": "Ensemble Corund, Ensemble mit alten Instrumenten",
+      "title": "J.S.Bach, Kantate BWV11",
+      "details": "",
+      "linkUrl": "",
+      "linkLabel": ""
+    },
+    {
+      "id": "concert-43-2022-05-20",
+      "dateIso": "2022-05-20",
+      "time": "18:00",
+      "dateDisplay": "20. Mai 2022 Musik und Stille, 18.00",
+      "rawLines": [
+        "20. Mai 2022 Musik und Stille, 18.00",
+        "Zendo, Bürgenstrasse 36, Luzern",
+        "Magda Schwerzmann, Flöten",
+        "Susan Butti Stamm, Bilder & Gedichte",
+        "Werke von Debussy, Hoover, Matusz, Ibert, Aitken,u.a.",
+        "Anmelden"
+      ],
+      "location": "Zendo, Bürgenstrasse 36, Luzern",
+      "title": "Magda Schwerzmann, Flöten",
+      "details": "Susan Butti Stamm, Bilder & Gedichte\nWerke von Debussy, Hoover, Matusz, Ibert, Aitken,u.a.\nAnmelden",
+      "linkUrl": "https://www.zenzentrum-offenerkreis.ch/details/Konzert_2022_05_20.html",
+      "linkLabel": "Anmelden"
+    },
+    {
+      "id": "concert-44-2022-04-25",
+      "dateIso": "2022-04-25",
+      "time": "10:00",
+      "dateDisplay": "25.April 2022, Kirche Fraumünster, Zürich, 10.00 Uhr",
+      "rawLines": [
+        "25.April 2022, Kirche Fraumünster, Zürich, 10.00 Uhr",
+        "Sächsilüüte, Frauen-Ehrung der Gesellschaft zu Fraumünster",
+        "öffentlicher Anlass",
+        "Musik aus dem 19.J.: Strauss, Grieg, Nielsen, Ravel",
+        "Magda Schwerzmann, Flöten, Traverso, Qena, Hümmelchen",
+        "Elisabeth Trechslin, Gitarre, Laute"
+      ],
+      "location": "Sächsilüüte, Frauen-Ehrung der Gesellschaft zu Fraumünster",
+      "title": "öffentlicher Anlass",
+      "details": "Musik aus dem 19.J.: Strauss, Grieg, Nielsen, Ravel\nMagda Schwerzmann, Flöten, Traverso, Qena, Hümmelchen\nElisabeth Trechslin, Gitarre, Laute",
+      "linkUrl": "",
+      "linkLabel": ""
+    },
+    {
+      "id": "concert-45-2022-04-24",
+      "dateIso": "2022-04-24",
+      "time": "",
+      "dateDisplay": "24. April 2022, Rest.Sonne, Küsnacht",
+      "rawLines": [
+        "24. April 2022, Rest.Sonne, Küsnacht",
+        "Magda Schwerzmann, Flöten, Traverso, Qena, Hümmelchen",
+        "Elisabeth Trechslin, Gitarre, Laute"
+      ],
+      "location": "Magda Schwerzmann, Flöten, Traverso, Qena, Hümmelchen",
+      "title": "Elisabeth Trechslin, Gitarre, Laute",
+      "details": "",
+      "linkUrl": "",
+      "linkLabel": ""
+    },
+    {
+      "id": "concert-46-2022-04-15",
+      "dateIso": "2022-04-15",
+      "time": "17:00",
+      "dateDisplay": "15. April 2022, Fribourg, Eglise du Collège St.Michel, 17.00",
+      "rawLines": [
+        "15. April 2022, Fribourg, Eglise du Collège St.Michel, 17.00",
+        "Johannespassion von J.S.Bach,",
+        "Orchester mit alten Instrumenten",
+        "unter der Leitung von Pascal Meyer"
+      ],
+      "location": "Johannespassion von J.S.Bach,",
+      "title": "Orchester mit alten Instrumenten",
+      "details": "unter der Leitung von Pascal Meyer",
+      "linkUrl": "",
+      "linkLabel": ""
+    },
+    {
+      "id": "concert-47-2022-04-08",
+      "dateIso": "2022-04-08",
+      "time": "19:00",
+      "dateDisplay": "8. April 2022, Konservatorium Winterthur, 19.00",
+      "rawLines": [
+        "8. April 2022, Konservatorium Winterthur, 19.00",
+        "Facettenkonzert: wird verschoben auf Herbst 2022",
+        "Auf den Spuren von Willy Burkhard und seiner Liebe zur Flöte",
+        "Magda Schwerzmann, Flöte",
+        "& Ensemble Varietas"
+      ],
+      "location": "Facettenkonzert: wird verschoben auf Herbst 2022",
+      "title": "Auf den Spuren von Willy Burkhard und seiner Liebe zur Flöte",
+      "details": "Magda Schwerzmann, Flöte\n& Ensemble Varietas",
+      "linkUrl": "",
+      "linkLabel": ""
+    },
+    {
+      "id": "concert-48-2022-04-04",
+      "dateIso": "2022-04-04",
+      "time": "16:00",
+      "dateDisplay": "4. April 2022, Thun, 16.00",
+      "rawLines": [
+        "4. April 2022, Thun, 16.00",
+        "J.S.Bach: Markus Passion Le Moment Baroque",
+        "Orchester für alte Musik mit historischen Instrumenten"
+      ],
+      "location": "J.S.Bach: Markus Passion\nLe Moment Baroque",
+      "title": "Orchester für alte Musik mit historischen Instrumenten",
+      "details": "",
+      "linkUrl": "",
+      "linkLabel": ""
+    },
+    {
+      "id": "concert-49-2022-04-01",
+      "dateIso": "2022-04-01",
+      "time": "19:30",
+      "dateDisplay": "1. April 2022, frz. Kirche Bern, 19.30",
+      "rawLines": [
+        "1. April 2022, frz. Kirche Bern, 19.30",
+        "J.S.Bach: Markus Passion Le Moment Baroque",
+        "Orchester für alte Musik mit historischen Instrumenten"
+      ],
+      "location": "J.S.Bach: Markus Passion\nLe Moment Baroque",
+      "title": "Orchester für alte Musik mit historischen Instrumenten",
+      "details": "",
+      "linkUrl": "",
+      "linkLabel": ""
+    },
+    {
+      "id": "concert-50-2022-03-13",
+      "dateIso": "2022-03-13",
+      "time": "10:00",
+      "dateDisplay": "13. März 2022, Jesuitenkirche Luzern, 10.00",
+      "rawLines": [
+        "13. März 2022, Jesuitenkirche Luzern, 10.00",
+        "Martin Schmid, Missa Palatina Marc-Antoine Charpentier Motette «In Honorem Sancti Xaverii Canticum» H 355",
+        "Collegium Musicum Luzern",
+        "Orchester für alte Musik mit historischen Instrumenten"
+      ],
+      "location": "Martin Schmid, Missa Palatina\nMarc-Antoine Charpentier Motette «In Honorem Sancti Xaverii Canticum» H 355",
+      "title": "Collegium Musicum Luzern",
+      "details": "Orchester für alte Musik mit historischen Instrumenten",
+      "linkUrl": "",
+      "linkLabel": ""
+    },
+    {
+      "id": "concert-51-2022-03-13",
+      "dateIso": "2022-03-13",
+      "time": "09:22",
+      "dateDisplay": "12./13. März 2022, Konservatorium Winterthur,",
+      "rawLines": [
+        "12./13. März 2022, Konservatorium Winterthur,",
+        "2. Winterthurer Flötentag (3. Verschiebedatum)",
+        "VERSCHOBEN wegen Corona auf 24./25.9.22",
+        "Konzert in der Stadtkirche Winterthur",
+        "Infos & Anmeldung: info@konservatorium.ch"
+      ],
+      "location": "2. Winterthurer Flötentag (3. Verschiebedatum)",
+      "title": "VERSCHOBEN wegen Corona auf 24./25.9.22",
+      "details": "Konzert in der Stadtkirche Winterthur\nInfos & Anmeldung: info@konservatorium.ch",
+      "linkUrl": "mailto:info@konservatorium.ch",
+      "linkLabel": "info@konservatorium.ch"
+    },
+    {
+      "id": "concert-52-2022-02-06",
+      "dateIso": "2022-02-06",
+      "time": "17:00",
+      "dateDisplay": "6. Februar 2022, Arizona State University, Phoenix, Arizona, USA, 5 pm, Rezital,",
+      "rawLines": [
+        "6. Februar 2022, Arizona State University, Phoenix, Arizona, USA, 5 pm, Rezital,",
+        "Elizabeth Buck, Flöten und Traversi",
+        "Magda Schwerzmann Flöten und Traversi",
+        "Werke von: Françaix, Daugherty, Bach, ..."
+      ],
+      "location": "Elizabeth Buck, Flöten und Traversi",
+      "title": "Magda Schwerzmann Flöten und Traversi",
+      "details": "Werke von: Françaix, Daugherty, Bach, ...",
+      "linkUrl": "",
+      "linkLabel": ""
+    },
+    {
+      "id": "concert-53-2022-01-31",
+      "dateIso": "2022-01-31",
+      "time": "17:00",
+      "dateDisplay": "31. Januar 2022, Florida State University, Tallahassee, USA,",
+      "rawLines": [
+        "31. Januar 2022, Florida State University, Tallahassee, USA,",
+        "5 pm, Masterclass und Rezital,",
+        "Elizabeth Buck, Flöten und Traversi",
+        "Magda Schwerzmann Flöten und Traversi",
+        "Werke von: Françaix, Bach, Proust, Daugherty, Burkhard"
+      ],
+      "location": "5 pm, Masterclass und Rezital,",
+      "title": "Elizabeth Buck, Flöten und Traversi",
+      "details": "Magda Schwerzmann Flöten und Traversi\nWerke von: Françaix, Bach, Proust, Daugherty, Burkhard",
+      "linkUrl": "",
+      "linkLabel": ""
+    },
+    {
+      "id": "concert-54-2022-01-29",
+      "dateIso": "2022-01-29",
+      "time": "17:00",
+      "dateDisplay": "29. Januar 2022, Florida Flute Convenition, Orlando, USA,",
+      "rawLines": [
+        "29. Januar 2022, Florida Flute Convenition, Orlando, USA,",
+        "5 pm, Rezital,",
+        "Elizabeth Buck, Flöten und Traversi",
+        "Magda Schwerzmann Flöten und Traversi",
+        "Werke von: Françaix, Schnyder, Bach, Proust, Daugherty"
+      ],
+      "location": "5 pm, Rezital,",
+      "title": "Elizabeth Buck, Flöten und Traversi",
+      "details": "Magda Schwerzmann Flöten und Traversi\nWerke von: Françaix, Schnyder, Bach, Proust, Daugherty",
+      "linkUrl": "",
+      "linkLabel": ""
+    },
+    {
+      "id": "concert-55-2022-01-26",
+      "dateIso": "2022-01-26",
+      "time": "19:00",
+      "dateDisplay": "26. Januar 2022, Galerie Art&Business, 19.00",
+      "rawLines": [
+        "26. Januar 2022, Galerie Art&Business, 19.00",
+        "Trittligasse 4, Zürich",
+        "Magda Schwerzmann, Flöten",
+        "Susan Butti Stamm, Bilder und Gedichte",
+        "Vernissage",
+        "Anmeldung: susan@sunesan.ch"
+      ],
+      "location": "Trittligasse 4, Zürich",
+      "title": "Magda Schwerzmann, Flöten",
+      "details": "Susan Butti Stamm, Bilder und Gedichte\nVernissage\nAnmeldung: susan@sunesan.ch",
+      "linkUrl": "mailto:susan@sunesan.ch",
+      "linkLabel": "susan@sunesan.ch"
+    },
+    {
+      "id": "concert-56-2022-01-01",
+      "dateIso": "2022-01-01",
+      "time": "16:30",
+      "dateDisplay": "1. Januar 2022, Jesuitenkirche Luzern, 16.30",
+      "rawLines": [
+        "1. Januar 2022, Jesuitenkirche Luzern, 16.30",
+        "J.S.Bach, A-Dur Messe",
+        "Collegium Musicum Luzern",
+        "Orchester für alte Musik mit historischen Instrumenten"
+      ],
+      "location": "J.S.Bach, A-Dur Messe",
+      "title": "Collegium Musicum Luzern",
+      "details": "Orchester für alte Musik mit historischen Instrumenten",
+      "linkUrl": "",
+      "linkLabel": ""
+    },
+    {
+      "id": "concert-57-2021-12-25",
+      "dateIso": "2021-12-25",
+      "time": "16:00",
+      "dateDisplay": "25. Dezember 2021, Jesuitenkirche Luzern, 16.00",
+      "rawLines": [
+        "25. Dezember 2021, Jesuitenkirche Luzern, 16.00",
+        "J.S.Bach, A-Dur Messe",
+        "Collegium Musicum Luzern",
+        "Orchester für alte Musik mit historischen Instrumenten"
+      ],
+      "location": "J.S.Bach, A-Dur Messe",
+      "title": "Collegium Musicum Luzern",
+      "details": "Orchester für alte Musik mit historischen Instrumenten",
+      "linkUrl": "",
+      "linkLabel": ""
+    },
+    {
+      "id": "concert-58-2021-12-24",
+      "dateIso": "2021-12-24",
+      "time": "",
+      "dateDisplay": "24. Dezember 2021, Musik in der Kirche Seen (Winterthur)",
+      "rawLines": [
+        "24. Dezember 2021, Musik in der Kirche Seen (Winterthur)",
+        "Gottesdienst mit Musik von",
+        "Magda Schwerzmann, Flöten",
+        "Elisabeth Trechslin, Gitarre"
+      ],
+      "location": "Gottesdienst mit Musik von",
+      "title": "Magda Schwerzmann, Flöten",
+      "details": "Elisabeth Trechslin, Gitarre",
+      "linkUrl": "",
+      "linkLabel": ""
+    },
+    {
+      "id": "concert-59-2021-12-21",
+      "dateIso": "2021-12-21",
+      "time": "17:00",
+      "dateDisplay": "21. Dezember 2021, Alterszentrum Herti Zug, 17.00",
+      "rawLines": [
+        "21. Dezember 2021, Alterszentrum Herti Zug, 17.00",
+        "Weihnachtliche Musik",
+        "Magda Schwerzmann, Flöten",
+        "Elisabeth Trechslin, Gitarre"
+      ],
+      "location": "Weihnachtliche Musik",
+      "title": "Magda Schwerzmann, Flöten",
+      "details": "Elisabeth Trechslin, Gitarre",
+      "linkUrl": "",
+      "linkLabel": ""
+    },
+    {
+      "id": "concert-60-2021-12-19",
+      "dateIso": "2021-12-19",
+      "time": "17:00",
+      "dateDisplay": "18/19. Dezember 2021, Fribourg, Eglise du Collège St.Michel, 17.00",
+      "rawLines": [
+        "18/19. Dezember 2021, Fribourg, Eglise du Collège St.Michel, 17.00",
+        "h-Moll Messe von J.S.Bach,",
+        "Orchester mit alten Instrumenten",
+        "unter der Leitung von Pascal Meyer"
+      ],
+      "location": "h-Moll Messe von J.S.Bach,",
+      "title": "Orchester mit alten Instrumenten",
+      "details": "unter der Leitung von Pascal Meyer",
+      "linkUrl": "",
+      "linkLabel": ""
+    },
+    {
+      "id": "concert-61-2021-12-12",
+      "dateIso": "2021-12-12",
+      "time": "09:30",
+      "dateDisplay": "12. Dezember 2021, Musik und Meditation, 9.30",
+      "rawLines": [
+        "12. Dezember 2021, Musik und Meditation, 9.30",
+        "Gesundheitszentrum Tafers",
+        "Magda Schwerzmann, Flöte",
+        "Roger Blanchard, Meditation",
+        "Anmeldung (Link)"
+      ],
+      "location": "Gesundheitszentrum Tafers",
+      "title": "Magda Schwerzmann, Flöte",
+      "details": "Roger Blanchard, Meditation\nAnmeldung (Link)",
+      "linkUrl": "https://www.roger-blanchard.com/events/klangweltenreise-fur-dein-sein-18",
+      "linkLabel": "Anmeldung (Link)"
+    },
+    {
+      "id": "concert-62-2021-12-07",
+      "dateIso": "2021-12-07",
+      "time": "",
+      "dateDisplay": "7. Dezember 2021, Restaurant Belvoirpark",
+      "rawLines": [
+        "7. Dezember 2021, Restaurant Belvoirpark",
+        "Weihnachtsfeier Women's Forum, interner Anlass",
+        "Magda Schwerzmann, Flöten",
+        "Elisabeth Trechslin, Gitarre"
+      ],
+      "location": "Weihnachtsfeier Women's Forum, interner Anlass",
+      "title": "Magda Schwerzmann, Flöten",
+      "details": "Elisabeth Trechslin, Gitarre",
+      "linkUrl": "",
+      "linkLabel": ""
+    },
+    {
+      "id": "concert-63-2021-11-28",
+      "dateIso": "2021-11-28",
+      "time": "10:00",
+      "dateDisplay": "28. November 2021, ref. Kirche Rüschlikon ZH, 10.00",
+      "rawLines": [
+        "28. November 2021, ref. Kirche Rüschlikon ZH, 10.00",
+        "Magda Schwerzmann, Flöte",
+        "Christian Scheifele, Orgel"
+      ],
+      "location": "Magda Schwerzmann, Flöte",
+      "title": "Christian Scheifele, Orgel",
+      "details": "",
+      "linkUrl": "",
+      "linkLabel": ""
+    },
+    {
+      "id": "concert-64-2021-11-21",
+      "dateIso": "2021-11-21",
+      "time": "09:30",
+      "dateDisplay": "21. November 2021, Musik und Meditation, 9.30",
+      "rawLines": [
+        "21. November 2021, Musik und Meditation, 9.30",
+        "Gesundheitszentrum Tafers",
+        "Magda Schwerzmann, Flöte",
+        "Roger Blanchard, Meditation",
+        "Anmeldung (Link)"
+      ],
+      "location": "Gesundheitszentrum Tafers",
+      "title": "Magda Schwerzmann, Flöte",
+      "details": "Roger Blanchard, Meditation\nAnmeldung (Link)",
+      "linkUrl": "https://www.roger-blanchard.com/events/klangweltenreise-fur-dein-sein-17",
+      "linkLabel": "Anmeldung"
+    },
+    {
+      "id": "concert-65-2021-11-19",
+      "dateIso": "2021-11-19",
+      "time": "19:00",
+      "dateDisplay": "NEU: 19. November 2021, 19.00 Uhr",
+      "rawLines": [
+        "NEU: 19. November 2021, 19.00 Uhr",
+        "Stille - Musik - Bild - Wort",
+        "Forchstrasse 256, Herrliberg ZH",
+        "Magda Schwerzmann, Flöten",
+        "Susan Butti Stamm, Bilder & Gedichte",
+        "Werke von Debussy, Hoover, Matusz, Ibert, Aitken,u.a.",
+        "Anmeldung: susan@sunesan.ch"
+      ],
+      "location": "Stille - Musik - Bild - Wort",
+      "title": "Forchstrasse 256, Herrliberg ZH",
+      "details": "Magda Schwerzmann, Flöten\nSusan Butti Stamm, Bilder & Gedichte\nWerke von Debussy, Hoover, Matusz, Ibert, Aitken,u.a.\nAnmeldung: susan@sunesan.ch",
+      "linkUrl": "mailto:susan@sunesan.ch",
+      "linkLabel": "susan@sunesan.ch"
+    },
+    {
+      "id": "concert-66-2021-11-19",
+      "dateIso": "2021-11-19",
+      "time": "18:00",
+      "dateDisplay": "19. November 2021 Musik und Stille, 18.00",
+      "rawLines": [
+        "19. November 2021 Musik und Stille, 18.00",
+        "VERSCHOBEN auf Mai 2022.",
+        "Zendo, Bürgenstrasse 36, Luzern",
+        "Magda Schwerzmann, Flöten",
+        "Susan Butti Stamm, Bilder & Gedichte",
+        "Werke von Debussy, Hoover, Matusz, Ibert, Aitken,u.a."
+      ],
+      "location": "VERSCHOBEN auf Mai 2022.",
+      "title": "Zendo, Bürgenstrasse 36, Luzern",
+      "details": "Magda Schwerzmann, Flöten\nSusan Butti Stamm, Bilder & Gedichte\nWerke von Debussy, Hoover, Matusz, Ibert, Aitken,u.a.",
+      "linkUrl": "",
+      "linkLabel": ""
+    },
+    {
+      "id": "concert-67-2021-11-12",
+      "dateIso": "2021-11-12",
+      "time": "20:15",
+      "dateDisplay": "12. November 2021 Lecture-Recital",
+      "rawLines": [
+        "12. November 2021 Lecture-Recital",
+        "in der Kirche Peter & Paul Winterthur, 20.15 Uhr",
+        "(Generalprobe offen für non-certificated mit Maske um 14.00 Uhr)",
+        "Magda Schwerzmann, Querflöte",
+        "Hans-Ueli Bamert, Orgel",
+        "Suite für Flöte und Orgel von Charles-Marie Widor",
+        "Kollekte"
+      ],
+      "location": "in der Kirche Peter & Paul Winterthur, 20.15 Uhr",
+      "title": "(Generalprobe offen für non-certificated mit Maske um 14.00 Uhr)",
+      "details": "Magda Schwerzmann, Querflöte\nHans-Ueli Bamert, Orgel\nSuite für Flöte und Orgel von Charles-Marie Widor\nKollekte",
+      "linkUrl": "",
+      "linkLabel": ""
+    },
+    {
+      "id": "concert-68-2021-09-26",
+      "dateIso": "2021-09-26",
+      "time": "17:00",
+      "dateDisplay": "26. September 2021 Hauskonzert",
+      "rawLines": [
+        "26. September 2021 Hauskonzert",
+        "17.00 Uhr, Winterthur",
+        "Magda Schwerzmann, Querflöte, Traverso, Hümmelchen, Geisshorn",
+        "Elisabeth Trechslin, Gitarre, Laute",
+        "Programm: Musik vom Mittelalter bis heute"
+      ],
+      "location": "17.00 Uhr, Winterthur",
+      "title": "Magda Schwerzmann, Querflöte, Traverso, Hümmelchen, Geisshorn",
+      "details": "Elisabeth Trechslin, Gitarre, Laute\nProgramm: Musik vom Mittelalter bis heute",
+      "linkUrl": "",
+      "linkLabel": ""
+    },
+    {
+      "id": "concert-69-2021-09-19",
+      "dateIso": "2021-09-19",
+      "time": "",
+      "dateDisplay": "19. September 2021 Klang-Meditation",
+      "rawLines": [
+        "19. September 2021 Klang-Meditation",
+        "Gesundheitszentrum, Juchstrasse 2, 1712 Tafers",
+        "Magda Schwerzmann, Flöten",
+        "Roger Blanchard, Meditation",
+        "Anmeldungs"
+      ],
+      "location": "Gesundheitszentrum, Juchstrasse 2, 1712 Tafers",
+      "title": "Magda Schwerzmann, Flöten",
+      "details": "Roger Blanchard, Meditation\nAnmeldungs",
+      "linkUrl": "https://www.roger-blanchard.com/events/klangweltenreise-fur-dein-sein-15",
+      "linkLabel": "Anmeldungs"
+    },
+    {
+      "id": "concert-70-2021-05-23",
+      "dateIso": "2021-05-23",
+      "time": "",
+      "dateDisplay": "23. Mai 2021, Flötenmusik in der ref. Kirche Embrach, 1o.o0 Uhr",
+      "rawLines": [
+        "23. Mai 2021, Flötenmusik in der ref. Kirche Embrach, 1o.o0 Uhr",
+        "Gottesdienst mit Musik von",
+        "Magda Schwerzmann, Flöten",
+        "Martin de Vargas, Orgel"
+      ],
+      "location": "Gottesdienst mit Musik von",
+      "title": "Magda Schwerzmann, Flöten",
+      "details": "Martin de Vargas, Orgel",
+      "linkUrl": "",
+      "linkLabel": ""
+    },
+    {
+      "id": "concert-71-2021-05-06",
+      "dateIso": "2021-05-06",
+      "time": "17:30",
+      "dateDisplay": "6. Mai 2021, Flötenmusik in der Jesuitenkirche, 17.30 Uhr",
+      "rawLines": [
+        "6. Mai 2021, Flötenmusik in der Jesuitenkirche, 17.30 Uhr",
+        "Jesuitenkirche Luzern",
+        "Gottesdienst mit Musik von",
+        "Magda Schwerzmann, Flöten",
+        "Mutsumi Ueno, Orgel"
+      ],
+      "location": "Jesuitenkirche Luzern",
+      "title": "Gottesdienst mit Musik von",
+      "details": "Magda Schwerzmann, Flöten\nMutsumi Ueno, Orgel",
+      "linkUrl": "",
+      "linkLabel": ""
+    },
+    {
+      "id": "concert-72-2021-03-27",
+      "dateIso": "2021-03-27",
+      "time": "",
+      "dateDisplay": "27. März 2021, Bern, Ensemble Corund",
+      "rawLines": [
+        "27. März 2021, Bern, Ensemble Corund",
+        "Matthäus Passion von J.S.Bach,",
+        "Orchester mit alten Instrumenten",
+        "unter der Leitung von Steven Smith",
+        "ABGESAGT"
+      ],
+      "location": "Matthäus Passion von J.S.Bach,",
+      "title": "Orchester mit alten Instrumenten",
+      "details": "unter der Leitung von Steven Smith\nABGESAGT",
+      "linkUrl": "",
+      "linkLabel": ""
+    }
+  ],
+  "verschiedenes": {
+    "bannerImage": "/assets/images/banner-verschiedenes.jpg",
+    "title": "VERSCHIEDENES",
+    "cards": [
+      {
+        "title": "Flöte & Gitarre",
+        "subtitle": "Mittelalter bis heute",
+        "color": "sage",
+        "text": "Mittelalterlich, romantisch oder zeitgenössisch – wir passen unseren Stil dem Anlass an.\n\nElisabeth Trechslin – Gitarre & Laute\nMagda Schwerzmann – Flöte / Traverso / Hümmelchen"
+      },
+      {
+        "title": "Weiterbildungs-Kurse",
+        "subtitle": "HSLU – Hochschule Luzern",
+        "color": "sand",
+        "text": "Weiterbildungskurse an der HSLU:\n• Unterricht mit kleinen Kindern\n• Das Dreieck im Unterricht, Potenzial Eltern"
+      }
+    ]
+  },
+  "lebenslauf": {
+    "bannerImage": "/assets/images/banner-lebenslauf.jpg",
+    "title": "LEBENSLAUF",
+    "heading": "Magda Schwerzmann",
+    "paragraphs": [
+      "Magda Schwerzmann ist Dozentin an der Musikhochschule Bern (HKB) und am Konservatorium Winterthur, und unterrichtet Querflöte, Traversflöte, Fachdidaktik und Kammermusik.",
+      "Magda Schwerzmann ist Solo-Flötistin im Orchester Collegium Musicum Luzern, das oft mit historischen Instrumenten spielt. Regelmässig konzertiert sie solistisch und kammermusikalisch im In- und Ausland und gibt Masterclasses sowie Weiterbildungskurse an verschiedenen Universitäten.",
+      "Als Interpretin spannt Magda Schwerzmann den Bogen zwischen der Vergangenheit und der Gegenwart. So reicht ihre künstlerische Arbeit von der Früh-Barocken Aufführungspraxis, über spätere Kammermusik- und Orchester-Konzerte, zu Musiktheater-Aufführungen, improvisatorischen Performances und live-elektronischen Produktionen. Regelmässig konzertiert sie in den Staaten und wurde mehrmals eingeladen an die National Flute Convention (USA), an die Florida Flute Convention und das Festival del Flauto in Quito (Ecuador).",
+      "Neben solistischen Auftritten (u.a. mit dem Basler Sinfonie-Orchester, Zürcher Kammerorchester, Sinfonieorchester von Quito) tritt sie als Kammermusikerin in verschiedenen Besetzungen sowohl im Bereich der Alten wie Neuen Musik auf. Von 1999 bis 2002 spielte sie im Ensemble Contrechamps Genf.",
+      "Konzerttourneen führten sie durch Europa, Polen, Bosnien, Russland und verschiedene Länder Mittel-, Süd- und Nordamerikas. Renommierte Schulen wie die Manhattan School of Music in New York, Arizona State University, State University of Tallahassee, State University of Houston und University of Music Boston haben sie eingeladen für Konzerte und Masterclasses. Im Herbstsemester 2015 und 2023 war sie Gastprofessorin an der Arizona State University.",
+      "Magda Schwerzmann studierte bei Peter-Lukas Graf, Philippe Racine und Aurèle Nicolet und schloss mit dem Konzert- und Solistendiplom ab. Ihr spezielles Interesse für Neue Musik ermöglichte eine Zusammenarbeit mit bedeutenden Komponisten unserer Zeit (u.a. Karl-Heinz Stockhausen, George Crumb, Dieter Ammann, Thomas Demenga, Rudolf Kelterborn, Y. Uebayashi). Sie machte Uraufführungen, Radio- und Fernseh-Aufnahmen verschiedenster Werke. Ihre Solo-CD QUERBLICK wurde bei Occam herausgegeben. 2010 erschien bei Neuklang ihre CD mit allen Flötenwerken von Daniel Schnyder: MANHATTANITE.",
+      "Zusätzlich studierte Magda Schwerzmann Alte Musik mit dem Hauptfach Flauto traverso an der Schola Cantorum Basiliensis bei Oskar Peter und schloss mit dem Diplom für Alte Musik ab. Die Begegnung mit Barthold Kuijken gab ihr wichtige Impulse. Sie ist Solo-Flötistin im Orchester für alte Musik Collegium Musicum Luzern und wirkt in diversen weiteren Orchestern für alte Musik mit, wie Allegria Musicale, Ensemble Corund, Orchestra Classica, Consortium Zürich u.a.",
+      "Als Preisträgerin ging sie am Nicati-Wettbewerb 2000 des Schweizerischen Tonkünstlervereins hervor (Wettbewerb für Neue, Zeitgenössische Musik). Sie ist von der Orpheum Stiftung zur Förderung junger Künstler und mehrfach mit dem Förderpreis Zuger Künstler und dem Migros-Kulturprozent-Preis ausgezeichnet worden.",
+      "Sie ist die erste Flötistin in der Schweiz mit Ausbildung als Suzuki-Querflötenlehrerin und unterrichtet auch Kinder bereits ab 4 Jahren.",
+      "Magda Schwerzmann unterrichtet parallel zur Hochschule Bern auch am Konservatorium Winterthur Querflöte und Traversflöte, sowie an Meisterkursen im In- und Ausland und ist Orchestermusikerin im Collegium Musicum Luzern."
+    ]
+  },
+  "unterricht": {
+    "bannerImage": "/assets/images/banner-unterricht.jpg",
+    "title": "UNTERRICHT",
+    "heading": "Querflöten- und Traversflöten-Unterricht & Fachdidaktik",
+    "subheading": "Fachdidaktik & Querflöte an der HKB · Flöten- & Traverso-Unterricht am Konservatorium Winterthur · Studium an der Kalaidos-Universität",
+    "institutions": [
+      {
+        "name": "HKB – Hochschule der Künste Bern",
+        "shortName": "HKB",
+        "color": "rose",
+        "items": [
+          "Fachdidaktik",
+          "Musikdidaktik",
+          "Querflöten- und Traverso-Unterricht"
+        ]
+      },
+      {
+        "name": "Konservatorium Winterthur",
+        "shortName": "Konservatorium Winterthur",
+        "color": "sand",
+        "items": [
+          "Querflöte",
+          "Traverso",
+          "Precollege",
+          "Suzuki-Kinder (ab 4 Jahren)",
+          "Erwachsenen-Ensemble Klangvielfalt",
+          "Querflötenensemble 1"
+        ]
+      }
+    ]
+  },
+  "hoerbeispiele": {
+    "bannerImage": "/assets/images/banner-hoerbeispiele.jpg",
+    "title": "HÖRBEISPIELE",
+    "albums": [
+      {
+        "title": "Manhattanite",
+        "description": "Die kompletten Werke für Flöte und Klavier von Daniel Schnyder.",
+        "coverImage": "/assets/images/cover-manhattanite.jpg",
+        "tracks": [
+          {
+            "title": "Teiresias",
+            "subtitle": "Daniel Schnyder",
+            "duration": "00:30",
+            "audioUrl": "/assets/audio/teiresias.mp3"
+          },
+          {
+            "title": "Manhattanite",
+            "subtitle": "Daniel Schnyder",
+            "duration": "00:30",
+            "audioUrl": "/assets/audio/manhattanite.mp3"
+          },
+          {
+            "title": "Les fontaines d'Aix",
+            "subtitle": "Daniel Schnyder",
+            "duration": "00:30",
+            "audioUrl": "/assets/audio/les-fontaines-daix.mp3"
+          }
+        ]
+      },
+      {
+        "title": "Querblick",
+        "description": "Soloprogramm mit 9 verschiedenen Travers- und Querflöten quer durch die Flötengeschichte.",
+        "coverImage": "/assets/images/cover-querblick.jpg",
+        "tracks": [
+          {
+            "title": "Marin Marais",
+            "subtitle": "um 1700",
+            "duration": "00:33",
+            "audioUrl": "/assets/audio/01-marin-marais.mp3"
+          },
+          {
+            "title": "Joseph Bodin de Boismortier",
+            "subtitle": "1. Hälfte 18. Jh.",
+            "duration": "00:20",
+            "audioUrl": "/assets/audio/02-boismortier.mp3"
+          },
+          {
+            "title": "Carl Philipp Emanuel Bach",
+            "subtitle": "2. Hälfte 18. Jh.",
+            "duration": "00:57",
+            "audioUrl": "/assets/audio/03-cpe-bach.mp3"
+          },
+          {
+            "title": "Anton Stamitz",
+            "subtitle": "um 1800",
+            "duration": "00:45",
+            "audioUrl": "/assets/audio/04-anton-stamitz.mp3"
+          },
+          {
+            "title": "Ernesto Köhler",
+            "subtitle": "2. Hälfte 19. Jh.",
+            "duration": "00:44",
+            "audioUrl": "/assets/audio/05-ernesto-koehler.mp3"
+          },
+          {
+            "title": "Claude Debussy",
+            "subtitle": "um 1900",
+            "duration": "00:24",
+            "audioUrl": "/assets/audio/06-claude-debussy.mp3"
+          },
+          {
+            "title": "Pierre Octave Ferroud",
+            "subtitle": "1. Hälfte 20. Jh.",
+            "duration": "00:19",
+            "audioUrl": "/assets/audio/07-pierre-octave-ferroud.mp3"
+          },
+          {
+            "title": "Matthias Müller",
+            "subtitle": "um 2000",
+            "duration": "00:21",
+            "audioUrl": "/assets/audio/08-matthias-mueller.mp3"
+          }
+        ]
+      }
+    ]
+  },
+  "links": {
+    "bannerImage": "/assets/images/banner-links.jpg",
+    "title": "LINKS",
+    "note": "Weiterführende Links & Institutionen",
+    "items": [
+      {
+        "title": "Hochschule der Künste Bern (HKB)",
+        "url": "https://www.hkb.bfh.ch/",
+        "description": "Dozentin für Querflöte, Traversflöte und Fachdidaktik"
+      },
+      {
+        "title": "Konservatorium Winterthur",
+        "url": "https://www.konservatorium.ch/",
+        "description": "Unterricht für Querflöte, Traverso, Precollege, Suzuki und Ensembles"
+      },
+      {
+        "title": "Collegium Musicum Luzern",
+        "url": "https://www.collegium-musicum.ch/",
+        "description": "Orchester für alte Musik mit historischen Instrumenten"
+      }
+    ]
+  }
+}

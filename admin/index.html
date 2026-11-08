@@ -1,0 +1,895 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Website verwalten | Magda Schwerzmann</title>
+  <link rel="icon" href="../assets/images/logo.png" type="image/png" />
+  <link rel="stylesheet" href="../assets/style.css" />
+  <style>
+    body {
+      background: #f3f2ee;
+    }
+    .admin-header {
+      background: #ffffff;
+      border-bottom: 1px solid var(--border);
+      padding: 1rem 1.5rem;
+      position: sticky;
+      top: 0;
+      z-index: 200;
+      box-shadow: var(--shadow-sm);
+    }
+    .admin-header-inner {
+      max-width: 1040px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .admin-title {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-family: var(--font-serif);
+      font-size: 1.4rem;
+      font-weight: 600;
+    }
+    .admin-actions {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      padding: 0.6rem 1.2rem;
+      border-radius: 5px;
+      font-family: var(--font-sans);
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+      border: 1px solid transparent;
+      transition: all 0.15s ease;
+    }
+    .btn-primary {
+      background: var(--teal);
+      color: #ffffff;
+    }
+    .btn-primary:hover {
+      background: #495e5e;
+    }
+    .btn-secondary {
+      background: #ffffff;
+      color: var(--text);
+      border-color: var(--border);
+    }
+    .btn-secondary:hover {
+      border-color: var(--teal);
+      color: var(--teal);
+    }
+    .btn-danger {
+      background: #fff5f5;
+      color: #c53030;
+      border-color: #feb2b2;
+      padding: 0.4rem 0.75rem;
+      font-size: 0.8rem;
+    }
+    .btn-danger:hover {
+      background: #fed7d7;
+    }
+    .admin-container {
+      max-width: 1040px;
+      margin: 1.75rem auto 4rem;
+      padding: 0 1.5rem;
+    }
+    .tabs {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      margin-bottom: 1.5rem;
+      border-bottom: 2px solid var(--border);
+      padding-bottom: 0.5rem;
+    }
+    .tab-btn {
+      background: transparent;
+      border: none;
+      padding: 0.65rem 1.15rem;
+      border-radius: 5px;
+      font-family: var(--font-sans);
+      font-size: 0.92rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      cursor: pointer;
+    }
+    .tab-btn:hover {
+      background: rgba(95, 119, 119, 0.08);
+      color: var(--teal);
+    }
+    .tab-btn.active {
+      background: var(--teal);
+      color: #ffffff;
+    }
+    .panel {
+      display: none;
+    }
+    .panel.active {
+      display: block;
+    }
+    .card {
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 1.5rem;
+      margin-bottom: 1.25rem;
+      box-shadow: var(--shadow-sm);
+    }
+    .card h2 {
+      font-size: 1.2rem;
+      color: var(--teal);
+      margin-bottom: 1rem;
+    }
+    .form-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+      margin-bottom: 0.85rem;
+    }
+    .form-group label {
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+      font-family: var(--font-sans);
+      font-size: 0.96rem;
+      padding: 0.6rem 0.75rem;
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      color: var(--text);
+      background: #fdfdfc;
+    }
+    .form-group input:focus,
+    .form-group textarea:focus,
+    .form-group select:focus {
+      outline: none;
+      border-color: var(--teal);
+      background: #ffffff;
+    }
+    .concert-editor-item {
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--teal-light);
+      border-radius: 6px;
+      padding: 1.25rem;
+      margin-bottom: 1rem;
+    }
+    .concert-editor-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.85rem;
+      gap: 1rem;
+    }
+    .concert-editor-header strong {
+      font-family: var(--font-serif);
+      font-size: 1.2rem;
+      color: var(--teal);
+    }
+    .status-toast {
+      position: fixed;
+      bottom: 1.5rem;
+      right: 1.5rem;
+      padding: 0.9rem 1.4rem;
+      border-radius: 6px;
+      background: #2f5233;
+      color: #ffffff;
+      font-weight: 600;
+      box-shadow: var(--shadow);
+      z-index: 999;
+      display: none;
+    }
+    .status-toast.error {
+      background: #9b2c2c;
+    }
+    .help-banner {
+      background: var(--teal-pale);
+      border-left: 4px solid var(--teal);
+      padding: 1rem 1.25rem;
+      border-radius: 4px;
+      margin-bottom: 1.5rem;
+      font-size: 0.95rem;
+    }
+  </style>
+</head>
+<body>
+  <header class="admin-header">
+    <div class="admin-header-inner">
+      <div class="admin-title">
+        <img src="../assets/images/logo.png" alt="Logo" style="width: 30px; height: 30px;" />
+        <span>Website-Editor – Magda Schwerzmann</span>
+      </div>
+      <div class="admin-actions">
+        <a href="../" target="_blank" class="btn btn-secondary">↗ Website ansehen</a>
+        <button type="button" id="saveBtn" class="btn btn-primary">💾 Änderungen speichern</button>
+      </div>
+    </div>
+  </header>
+
+  <div class="admin-container">
+    <div class="tabs">
+      <button type="button" class="tab-btn active" data-tab="konzerte">🎵 Konzerte</button>
+      <button type="button" class="tab-btn" data-tab="home">🏠 Startseite & Kontakt</button>
+      <button type="button" class="tab-btn" data-tab="lebenslauf">📄 Lebenslauf</button>
+      <button type="button" class="tab-btn" data-tab="unterricht">🎓 Unterricht & Verschiedenes</button>
+      <button type="button" class="tab-btn" data-tab="links">🔗 Links</button>
+      <button type="button" class="tab-btn" data-tab="settings">☁️ GitHub / Cloud</button>
+    </div>
+
+    <!-- TAB 1: KONZERTE -->
+    <section id="panel-konzerte" class="panel active">
+      <div class="help-banner">
+        Hier kannst du neue Konzerte eintragen oder bestehende anpassen. Die Konzerte werden automatisch nach Datum sortiert. Klicke oben rechts auf <strong>«Änderungen speichern»</strong>, um die Website zu aktualisieren.
+      </div>
+
+      <div style="margin-bottom: 1.25rem;">
+        <button type="button" id="addConcertBtn" class="btn btn-primary">+ Neues Konzert hinzufügen</button>
+      </div>
+
+      <div id="concertsEditorList"></div>
+    </section>
+
+    <!-- TAB 2: STARTSEITE & KONTAKT -->
+    <section id="panel-home" class="panel">
+      <div class="card">
+        <h2>«Aktuell» auf der Startseite</h2>
+        <div class="form-group">
+          <label for="aktuellMode">Anzeige-Modus</label>
+          <select id="aktuellMode">
+            <option value="auto">Automatisch das nächste kommende Konzert aus der Konzertliste zeigen</option>
+            <option value="manual">Manuell festlegen (eigener Text unten)</option>
+          </select>
+        </div>
+        <div id="manualAktuellFields">
+          <div class="form-grid">
+            <div class="form-group">
+              <label for="aktDate">Datum & Uhrzeit</label>
+              <input type="text" id="aktDate" placeholder="z.B. 28. Juni 2026, 17.00 Uhr" />
+            </div>
+            <div class="form-group">
+              <label for="aktLocation">Ort / Kirche / Saal</label>
+              <input type="text" id="aktLocation" placeholder="z.B. KKL Luzern" />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="aktProgram">Programm / Titel</label>
+            <input type="text" id="aktProgram" />
+          </div>
+          <div class="form-group">
+            <label for="aktNote">Zusatzinfo (z.B. Eintritt / Leitung)</label>
+            <input type="text" id="aktNote" />
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>Über mich (Startseite)</h2>
+        <div class="form-group">
+          <label for="aboutTitle">Überschrift</label>
+          <input type="text" id="aboutTitle" />
+        </div>
+        <div class="form-group">
+          <label for="aboutText">Kurztext auf der Startseite</label>
+          <textarea id="aboutText" rows="4"></textarea>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>Kontaktangaben (Fusszeile auf allen Seiten)</h2>
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="contactName">Name</label>
+            <input type="text" id="contactName" />
+          </div>
+          <div class="form-group">
+            <label for="contactStreet">Strasse</label>
+            <input type="text" id="contactStreet" />
+          </div>
+          <div class="form-group">
+            <label for="contactCity">PLZ & Ort</label>
+            <input type="text" id="contactCity" />
+          </div>
+          <div class="form-group">
+            <label for="contactPhone">Telefon</label>
+            <input type="text" id="contactPhone" />
+          </div>
+          <div class="form-group">
+            <label for="contactEmail">E-Mail-Adresse</label>
+            <input type="email" id="contactEmail" />
+          </div>
+          <div class="form-group">
+            <label for="contactEmailDisplay">Angezeigte E-Mail</label>
+            <input type="text" id="contactEmailDisplay" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 3: LEBENSLAUF -->
+    <section id="panel-lebenslauf" class="panel">
+      <div class="card">
+        <h2>Lebenslauf – Absätze</h2>
+        <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1rem;">
+          Jedes Textfeld entspricht einem Absatz auf der Seite «Lebenslauf».
+        </p>
+        <div id="bioParagraphsList"></div>
+        <button type="button" id="addBioParaBtn" class="btn btn-secondary">+ Weiteren Absatz hinzufügen</button>
+      </div>
+    </section>
+
+    <!-- TAB 4: UNTERRICHT & VERSCHIEDENES -->
+    <section id="panel-unterricht" class="panel">
+      <div class="card">
+        <h2>Unterricht</h2>
+        <div class="form-group">
+          <label for="untHeading">Haupttitel</label>
+          <input type="text" id="untHeading" />
+        </div>
+        <div class="form-group">
+          <label for="untSubheading">Untertitel</label>
+          <input type="text" id="untSubheading" />
+        </div>
+        <div id="untInstitutionsList"></div>
+      </div>
+
+      <div class="card">
+        <h2>Verschiedenes – Karten</h2>
+        <div id="verschiedenesCardsList"></div>
+      </div>
+    </section>
+
+    <!-- TAB 5: LINKS -->
+    <section id="panel-links" class="panel">
+      <div class="card">
+        <h2>Links verwalten</h2>
+        <div id="linksEditorList"></div>
+        <button type="button" id="addLinkBtn" class="btn btn-secondary">+ Neuen Link hinzufügen</button>
+      </div>
+    </section>
+
+    <!-- TAB 6: GITHUB / CLOUD SETTINGS -->
+    <section id="panel-settings" class="panel">
+      <div class="card">
+        <h2>Speicher-Verbindung (Lokal / Raspberry Pi vs. GitHub Pages)</h2>
+        <p style="font-size: 0.95rem; color: var(--text-muted); margin-bottom: 1rem;">
+          Wenn die Website auf deinem Computer oder Raspberry Pi läuft, speichert der Editor direkt ohne Anmeldung.
+          Wenn die Website kostenlos auf <strong>GitHub Pages</strong> gehostet wird, kannst du hier einmalig das GitHub-Repository und einen Token hinterlegen (wird lokal im Browser gespeichert), damit Änderungen direkt auf GitHub gespeichert werden.
+        </p>
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="ghRepo">GitHub Repository (z.B. gallmann/magda-website)</label>
+            <input type="text" id="ghRepo" placeholder="username/magda-website" />
+          </div>
+          <div class="form-group">
+            <label for="ghBranch">Branch</label>
+            <input type="text" id="ghBranch" value="main" />
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="ghToken">GitHub Personal Access Token (Fine-grained Token mit Contents: Read & Write)</label>
+          <input type="password" id="ghToken" placeholder="github_pat_..." />
+        </div>
+        <div style="display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 0.5rem;">
+          <button type="button" id="saveGhSettingsBtn" class="btn btn-secondary">GitHub-Zugangsdaten im Browser merken</button>
+          <button type="button" id="copyMagicLinkBtn" class="btn btn-secondary">🔗 Einrichtungs-Link für Magda kopieren</button>
+          <button type="button" id="downloadJsonBtn" class="btn btn-secondary">⬇ Backup (content.json) herunterladen</button>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <div id="toast" class="status-toast"></div>
+
+  <script>
+    let siteData = null;
+
+    const MONTHS_DE = [
+      'Januar', 'Februar', 'März', 'April', 'Mai', 'Juni',
+      'Juli', 'August', 'September', 'Oktober', 'November', 'Dezember'
+    ];
+
+    function showToast(msg, isError = false) {
+      const t = document.getElementById('toast');
+      t.textContent = msg;
+      t.className = isError ? 'status-toast error' : 'status-toast';
+      t.style.display = 'block';
+      setTimeout(() => { t.style.display = 'none'; }, 4000);
+    }
+
+    // Tabs
+    document.querySelectorAll('.tab-btn').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+        document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+        btn.classList.add('active');
+        document.getElementById('panel-' + btn.dataset.tab).classList.add('active');
+      });
+    });
+
+    async function loadContent() {
+      const res = await fetch('../data/content.json?t=' + Date.now());
+      siteData = await res.json();
+      renderAll();
+    }
+
+    function renderAll() {
+      renderConcerts();
+      renderHomeAndContact();
+      renderBio();
+      renderUnterrichtAndVerschiedenes();
+      renderLinks();
+      loadGhSettings();
+    }
+
+    function formatConcertDateDe(dateIso, timeStr) {
+      if (!dateIso) return 'Neues Konzert';
+      const parts = dateIso.split('-');
+      if (parts.length !== 3) return dateIso;
+      const day = parseInt(parts[2], 10);
+      const month = MONTHS_DE[parseInt(parts[1], 10) - 1] || '';
+      const year = parts[0];
+      let res = `${day}. ${month} ${year}`;
+      if (timeStr && timeStr.trim()) {
+        let t = timeStr.trim().replace(':', '.');
+        if (!t.toLowerCase().includes('uhr')) t += ' Uhr';
+        res += `, ${t}`;
+      }
+      return res;
+    }
+
+    function renderConcerts() {
+      const list = document.getElementById('concertsEditorList');
+      list.innerHTML = '';
+
+      siteData.concerts.forEach((c, idx) => {
+        if (!c.dateDisplay) {
+          c.dateDisplay = formatConcertDateDe(c.dateIso, c.time);
+        }
+        const el = document.createElement('div');
+        el.className = 'concert-editor-item';
+        el.innerHTML = `
+          <div class="concert-editor-header">
+            <strong id="concert-hdr-${idx}">${escapeHtml(c.dateDisplay)} — ${escapeHtml(c.location || 'Ort eingeben')}</strong>
+            <button type="button" class="btn btn-danger" data-del="${idx}">Löschen</button>
+          </div>
+          <div class="form-grid">
+            <div class="form-group">
+              <label>Datum</label>
+              <input type="date" value="${escapeAttr(c.dateIso || '')}" data-idx="${idx}" data-field="dateIso" />
+            </div>
+            <div class="form-group">
+              <label>Uhrzeit (optional)</label>
+              <input type="time" value="${escapeAttr(c.time || '')}" data-idx="${idx}" data-field="time" />
+            </div>
+            <div class="form-group">
+              <label>Ort / Kirche / Saal</label>
+              <input type="text" value="${escapeAttr(c.location || '')}" placeholder="z.B. KKL Luzern" data-idx="${idx}" data-field="location" />
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Titel / Programm / Werk</label>
+            <input type="text" value="${escapeAttr(c.title || '')}" placeholder="z.B. Haydn: Die Schöpfung" data-idx="${idx}" data-field="title" />
+          </div>
+          <div class="form-group">
+            <label>Details / Mitwirkende (mehrzeilig)</label>
+            <textarea rows="3" data-idx="${idx}" data-field="details">${escapeHtml(c.details || '')}</textarea>
+          </div>
+          <div class="form-grid">
+            <div class="form-group">
+              <label>Optionaler Link (URL)</label>
+              <input type="url" value="${escapeAttr(c.linkUrl || '')}" placeholder="https://..." data-idx="${idx}" data-field="linkUrl" />
+            </div>
+            <div class="form-group">
+              <label>Link-Text (optional)</label>
+              <input type="text" value="${escapeAttr(c.linkLabel || '')}" placeholder="z.B. Anmeldung / Infos" data-idx="${idx}" data-field="linkLabel" />
+            </div>
+          </div>
+        `;
+        list.appendChild(el);
+      });
+
+      list.querySelectorAll('input, textarea').forEach((inp) => {
+        inp.addEventListener('input', (e) => {
+          const i = Number(e.target.dataset.idx);
+          const f = e.target.dataset.field;
+          siteData.concerts[i][f] = e.target.value;
+          delete siteData.concerts[i].lines;
+          delete siteData.concerts[i].rawLines;
+          siteData.concerts[i].dateDisplay = formatConcertDateDe(
+            siteData.concerts[i].dateIso,
+            siteData.concerts[i].time
+          );
+          const hdr = document.getElementById(`concert-hdr-${i}`);
+          if (hdr) {
+            hdr.textContent = `${siteData.concerts[i].dateDisplay} — ${siteData.concerts[i].location || 'Ort eingeben'}`;
+          }
+        });
+      });
+
+      list.querySelectorAll('[data-del]').forEach((btn) => {
+        btn.addEventListener('click', () => {
+          const i = Number(btn.dataset.del);
+          if (confirm('Dieses Konzert wirklich löschen?')) {
+            siteData.concerts.splice(i, 1);
+            renderConcerts();
+          }
+        });
+      });
+    }
+
+    document.getElementById('addConcertBtn').addEventListener('click', () => {
+      const today = new Date().toISOString().slice(0, 10);
+      siteData.concerts.unshift({
+        id: 'concert-' + Date.now(),
+        dateIso: today,
+        time: '19:30',
+        dateDisplay: formatConcertDateDe(today, '19:30'),
+        location: '',
+        title: '',
+        details: '',
+        linkUrl: '',
+        linkLabel: ''
+      });
+      renderConcerts();
+    });
+
+    function renderHomeAndContact() {
+      const h = siteData.home;
+      const c = siteData.site.contact;
+      document.getElementById('aktuellMode').value = h.aktuellMode || 'manual';
+      document.getElementById('aktDate').value = h.aktuellConcert?.dateDisplay || '';
+      document.getElementById('aktLocation').value = h.aktuellConcert?.location || '';
+      document.getElementById('aktProgram').value = h.aktuellConcert?.program || '';
+      document.getElementById('aktNote').value = h.aktuellConcert?.note || '';
+      document.getElementById('aboutTitle').value = h.aboutTitle || '';
+      document.getElementById('aboutText').value = h.aboutText || '';
+
+      document.getElementById('contactName').value = c.name || '';
+      document.getElementById('contactStreet').value = c.street || '';
+      document.getElementById('contactCity').value = c.city || '';
+      document.getElementById('contactPhone').value = c.phone || '';
+      document.getElementById('contactEmail').value = c.email || '';
+      document.getElementById('contactEmailDisplay').value = c.emailDisplay || '';
+    }
+
+    function collectHomeAndContact() {
+      siteData.home.aktuellMode = document.getElementById('aktuellMode').value;
+      siteData.home.aktuellConcert = {
+        label: 'Aktuell:',
+        dateDisplay: document.getElementById('aktDate').value,
+        location: document.getElementById('aktLocation').value,
+        program: document.getElementById('aktProgram').value,
+        note: document.getElementById('aktNote').value
+      };
+      siteData.home.aboutTitle = document.getElementById('aboutTitle').value;
+      siteData.home.aboutText = document.getElementById('aboutText').value;
+
+      siteData.site.contact.name = document.getElementById('contactName').value;
+      siteData.site.contact.street = document.getElementById('contactStreet').value;
+      siteData.site.contact.city = document.getElementById('contactCity').value;
+      siteData.site.contact.phone = document.getElementById('contactPhone').value;
+      siteData.site.contact.email = document.getElementById('contactEmail').value;
+      siteData.site.contact.emailDisplay = document.getElementById('contactEmailDisplay').value;
+    }
+
+    function renderBio() {
+      const container = document.getElementById('bioParagraphsList');
+      container.innerHTML = '';
+      siteData.lebenslauf.paragraphs.forEach((p, idx) => {
+        const div = document.createElement('div');
+        div.className = 'form-group';
+        div.innerHTML = `
+          <div style="display:flex; justify-content:space-between; align-items:center;">
+            <label>Absatz ${idx + 1}</label>
+            <button type="button" class="btn btn-danger" data-del-bio="${idx}">Entfernen</button>
+          </div>
+          <textarea rows="3" data-bio-idx="${idx}">${escapeHtml(p)}</textarea>
+        `;
+        container.appendChild(div);
+      });
+
+      container.querySelectorAll('textarea').forEach((ta) => {
+        ta.addEventListener('input', () => {
+          siteData.lebenslauf.paragraphs[Number(ta.dataset.bioIdx)] = ta.value;
+        });
+      });
+
+      container.querySelectorAll('[data-del-bio]').forEach((btn) => {
+        btn.addEventListener('click', () => {
+          siteData.lebenslauf.paragraphs.splice(Number(btn.dataset.delBio), 1);
+          renderBio();
+        });
+      });
+    }
+
+    document.getElementById('addBioParaBtn').addEventListener('click', () => {
+      siteData.lebenslauf.paragraphs.push('');
+      renderBio();
+    });
+
+    function renderUnterrichtAndVerschiedenes() {
+      document.getElementById('untHeading').value = siteData.unterricht.heading || '';
+      document.getElementById('untSubheading').value = siteData.unterricht.subheading || '';
+
+      const untList = document.getElementById('untInstitutionsList');
+      untList.innerHTML = '';
+      siteData.unterricht.institutions.forEach((inst, idx) => {
+        const div = document.createElement('div');
+        div.className = 'concert-editor-item';
+        div.innerHTML = `
+          <div class="form-grid">
+            <div class="form-group">
+              <label>Kurztitel</label>
+              <input type="text" value="${escapeAttr(inst.shortName || '')}" data-unt-idx="${idx}" data-unt-field="shortName" />
+            </div>
+            <div class="form-group">
+              <label>Institution Name</label>
+              <input type="text" value="${escapeAttr(inst.name || '')}" data-unt-idx="${idx}" data-unt-field="name" />
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Fächer / Angebote (eines pro Zeile)</label>
+            <textarea rows="4" data-unt-idx="${idx}" data-unt-field="items">${escapeHtml((inst.items || []).join('\n'))}</textarea>
+          </div>
+        `;
+        untList.appendChild(div);
+      });
+
+      untList.querySelectorAll('input, textarea').forEach((el) => {
+        el.addEventListener('input', () => {
+          const idx = Number(el.dataset.untIdx);
+          const f = el.dataset.untField;
+          if (f === 'items') {
+            siteData.unterricht.institutions[idx].items = el.value.split('\n').map(s => s.trim()).filter(Boolean);
+          } else {
+            siteData.unterricht.institutions[idx][f] = el.value;
+          }
+        });
+      });
+
+      const verList = document.getElementById('verschiedenesCardsList');
+      verList.innerHTML = '';
+      siteData.verschiedenes.cards.forEach((card, idx) => {
+        const div = document.createElement('div');
+        div.className = 'concert-editor-item';
+        div.innerHTML = `
+          <div class="form-grid">
+            <div class="form-group">
+              <label>Titel</label>
+              <input type="text" value="${escapeAttr(card.title || '')}" data-ver-idx="${idx}" data-ver-field="title" />
+            </div>
+            <div class="form-group">
+              <label>Untertitel</label>
+              <input type="text" value="${escapeAttr(card.subtitle || '')}" data-ver-idx="${idx}" data-ver-field="subtitle" />
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Text</label>
+            <textarea rows="4" data-ver-idx="${idx}" data-ver-field="text">${escapeHtml(card.text || '')}</textarea>
+          </div>
+        `;
+        verList.appendChild(div);
+      });
+
+      verList.querySelectorAll('input, textarea').forEach((el) => {
+        el.addEventListener('input', () => {
+          siteData.verschiedenes.cards[Number(el.dataset.verIdx)][el.dataset.verField] = el.value;
+        });
+      });
+    }
+
+    function renderLinks() {
+      const list = document.getElementById('linksEditorList');
+      list.innerHTML = '';
+      siteData.links.items.forEach((item, idx) => {
+        const div = document.createElement('div');
+        div.className = 'concert-editor-item';
+        div.innerHTML = `
+          <div class="concert-editor-header">
+            <strong>${escapeHtml(item.title || 'Link')}</strong>
+            <button type="button" class="btn btn-danger" data-del-link="${idx}">Löschen</button>
+          </div>
+          <div class="form-grid">
+            <div class="form-group">
+              <label>Titel</label>
+              <input type="text" value="${escapeAttr(item.title || '')}" data-link-idx="${idx}" data-link-field="title" />
+            </div>
+            <div class="form-group">
+              <label>URL</label>
+              <input type="url" value="${escapeAttr(item.url || '')}" data-link-idx="${idx}" data-link-field="url" />
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Beschreibung</label>
+            <input type="text" value="${escapeAttr(item.description || '')}" data-link-idx="${idx}" data-link-field="description" />
+          </div>
+        `;
+        list.appendChild(div);
+      });
+
+      list.querySelectorAll('input').forEach((el) => {
+        el.addEventListener('input', () => {
+          siteData.links.items[Number(el.dataset.linkIdx)][el.dataset.linkField] = el.value;
+        });
+      });
+
+      list.querySelectorAll('[data-del-link]').forEach((btn) => {
+        btn.addEventListener('click', () => {
+          siteData.links.items.splice(Number(btn.dataset.delLink), 1);
+          renderLinks();
+        });
+      });
+    }
+
+    document.getElementById('addLinkBtn').addEventListener('click', () => {
+      siteData.links.items.push({ title: '', url: 'https://', description: '' });
+      renderLinks();
+    });
+
+    function checkMagicSetupHash() {
+      if (!window.location.hash || window.location.hash.length < 2) return;
+      const params = new URLSearchParams(window.location.hash.slice(1));
+      const repo = params.get('repo');
+      const branch = params.get('branch');
+      const token = params.get('token');
+      if (repo || token) {
+        if (repo) localStorage.setItem('magda_gh_repo', repo.trim());
+        if (branch) localStorage.setItem('magda_gh_branch', branch.trim());
+        if (token) localStorage.setItem('magda_gh_token', token.trim());
+        history.replaceState(null, '', window.location.pathname + window.location.search);
+        showToast('✓ Einmalige Einrichtung erfolgreich! Du kannst jetzt jederzeit speichern.');
+      }
+    }
+
+    function loadGhSettings() {
+      checkMagicSetupHash();
+      document.getElementById('ghRepo').value = localStorage.getItem('magda_gh_repo') || '';
+      document.getElementById('ghBranch').value = localStorage.getItem('magda_gh_branch') || 'main';
+      document.getElementById('ghToken').value = localStorage.getItem('magda_gh_token') || '';
+    }
+
+    document.getElementById('saveGhSettingsBtn').addEventListener('click', () => {
+      localStorage.setItem('magda_gh_repo', document.getElementById('ghRepo').value.trim());
+      localStorage.setItem('magda_gh_branch', document.getElementById('ghBranch').value.trim() || 'main');
+      localStorage.setItem('magda_gh_token', document.getElementById('ghToken').value.trim());
+      showToast('GitHub-Einstellungen im Browser gespeichert.');
+    });
+
+    document.getElementById('copyMagicLinkBtn').addEventListener('click', async () => {
+      const repo = document.getElementById('ghRepo').value.trim();
+      const branch = document.getElementById('ghBranch').value.trim() || 'main';
+      const token = document.getElementById('ghToken').value.trim();
+      if (!repo || !token) {
+        showToast('Bitte zuerst Repository und Token eingeben.', true);
+        return;
+      }
+      localStorage.setItem('magda_gh_repo', repo);
+      localStorage.setItem('magda_gh_branch', branch);
+      localStorage.setItem('magda_gh_token', token);
+      const hash = new URLSearchParams({ repo, branch, token }).toString();
+      const magicUrl = `${window.location.origin}${window.location.pathname}#${hash}`;
+      try {
+        await navigator.clipboard.writeText(magicUrl);
+        showToast('✓ Einrichtungs-Link in die Zwischenablage kopiert!');
+      } catch {
+        prompt('Kopiere diesen Einrichtungs-Link für Magda:', magicUrl);
+      }
+    });
+
+    document.getElementById('downloadJsonBtn').addEventListener('click', () => {
+      collectHomeAndContact();
+      const blob = new Blob([JSON.stringify(siteData, null, 2)], { type: 'application/json' });
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = 'content.json';
+      a.click();
+    });
+
+    // Save handler (tries local/Raspberry Pi API first, falls back to GitHub API)
+    document.getElementById('saveBtn').addEventListener('click', async () => {
+      collectHomeAndContact();
+      siteData.unterricht.heading = document.getElementById('untHeading').value;
+      siteData.unterricht.subheading = document.getElementById('untSubheading').value;
+
+      // Sort concerts descending by dateIso
+      siteData.concerts.sort((a, b) => (b.dateIso || '').localeCompare(a.dateIso || ''));
+
+      const saveBtn = document.getElementById('saveBtn');
+      saveBtn.disabled = true;
+      saveBtn.textContent = '⏳ Speichert...';
+
+      try {
+        // 1. Try local server endpoint (/api/save)
+        const localRes = await fetch('../api/save', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(siteData, null, 2)
+        }).catch(() => null);
+
+        if (localRes && localRes.ok) {
+          renderConcerts();
+          showToast('✓ Gespeichert & alle Seiten aktualisiert!');
+          return;
+        }
+
+        // 2. Otherwise try GitHub REST API if configured
+        const repo = localStorage.getItem('magda_gh_repo');
+        const branch = localStorage.getItem('magda_gh_branch') || 'main';
+        const token = localStorage.getItem('magda_gh_token');
+
+        if (!repo || !token) {
+          showToast('Bitte im Reiter «GitHub / Cloud» ein Token hinterlegen oder den lokalen Server nutzen.', true);
+          return;
+        }
+
+        const apiUrl = `https://api.github.com/repos/${repo}/contents/data/content.json`;
+        const getFile = await fetch(`${apiUrl}?ref=${branch}`, {
+          headers: { Authorization: `Bearer ${token}`, Accept: 'application/vnd.github+json' }
+        });
+        if (!getFile.ok) throw new Error('GitHub-Zugriff fehlgeschlagen: ' + getFile.status);
+        const fileMeta = await getFile.json();
+
+        const contentBase64 = btoa(unescape(encodeURIComponent(JSON.stringify(siteData, null, 2))));
+        const putRes = await fetch(apiUrl, {
+          method: 'PUT',
+          headers: {
+            Authorization: `Bearer ${token}`,
+            Accept: 'application/vnd.github+json',
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({
+            message: 'Website-Inhalt über /admin aktualisiert',
+            content: contentBase64,
+            sha: fileMeta.sha,
+            branch
+          })
+        });
+
+        if (!putRes.ok) throw new Error('GitHub Commit fehlgeschlagen: ' + putRes.status);
+        renderConcerts();
+        showToast('✓ Direkt auf GitHub gespeichert! Die Website aktualisiert sich in ca. 20 Sekunden.');
+      } catch (err) {
+        showToast('Fehler beim Speichern: ' + err.message, true);
+      } finally {
+        saveBtn.disabled = false;
+        saveBtn.textContent = '💾 Änderungen speichern';
+      }
+    });
+
+    function escapeHtml(str) {
+      return String(str || '')
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;');
+    }
+
+    function escapeAttr(str) {
+      return escapeHtml(str).replace(/"/g, '&quot;');
+    }
+
+    loadContent();
+  </script>
+</body>
+</html>
