@@ -262,6 +262,7 @@
         <span>Website-Editor – Magda Schwerzmann</span>
       </div>
       <div class="admin-actions">
+        <button type="button" id="openAuthModalBtn" class="btn btn-secondary" title="Zugangsschlüssel hinterlegen oder ändern">🔑</button>
         <a href="../" target="_blank" class="btn btn-secondary">↗ Website ansehen</a>
         <button type="button" id="saveBtn" class="btn btn-primary">💾 Änderungen speichern</button>
       </div>
@@ -805,6 +806,7 @@
       document.getElementById('authModal').classList.remove('open');
     }
 
+    document.getElementById('openAuthModalBtn').addEventListener('click', () => openAuthModal(false));
     document.getElementById('closeAuthModalBtn').addEventListener('click', closeAuthModal);
     document.getElementById('cancelAuthModalBtn').addEventListener('click', closeAuthModal);
     document.getElementById('authModal').addEventListener('click', (e) => {
