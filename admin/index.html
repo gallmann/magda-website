@@ -252,6 +252,63 @@
       cursor: pointer;
       padding: 0.2rem 0.4rem;
     }
+    .preview-overlay {
+      position: fixed;
+      inset: 0;
+      background: #232c2c;
+      z-index: 600;
+      display: none;
+      flex-direction: column;
+    }
+    .preview-overlay.open {
+      display: flex;
+    }
+    .preview-toolbar {
+      background: #1c2424;
+      color: #ffffff;
+      padding: 0.65rem 1.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    }
+    .preview-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: #ede1a1;
+    }
+    .preview-pages {
+      display: flex;
+      gap: 0.35rem;
+      flex-wrap: wrap;
+    }
+    .preview-page-btn {
+      background: rgba(255, 255, 255, 0.1);
+      color: #e0e6e6;
+      border: none;
+      border-radius: 4px;
+      padding: 0.35rem 0.7rem;
+      font-family: var(--font-sans);
+      font-size: 0.78rem;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    .preview-page-btn:hover,
+    .preview-page-btn.active {
+      background: var(--teal-light);
+      color: #ffffff;
+    }
+    .preview-frame {
+      flex: 1;
+      width: 100%;
+      border: none;
+      background: #faf9f6;
+    }
   </style>
 </head>
 <body>
@@ -263,7 +320,8 @@
       </div>
       <div class="admin-actions">
         <button type="button" id="openAuthModalBtn" class="btn btn-secondary" title="Zugangsschlüssel hinterlegen oder ändern">🔑</button>
-        <a href="../" target="_blank" class="btn btn-secondary">↗ Website ansehen</a>
+        <a href="../" target="_blank" class="btn btn-secondary">↗ Live-Website</a>
+        <button type="button" id="previewBtn" class="btn btn-secondary">👁 Vorschau</button>
         <button type="button" id="saveBtn" class="btn btn-primary">💾 Änderungen speichern</button>
       </div>
     </div>
@@ -429,6 +487,26 @@
         </div>
       </div>
     </div>
+  </div>
+
+  <div id="previewOverlay" class="preview-overlay" role="dialog" aria-modal="true" aria-label="Website-Vorschau">
+    <div class="preview-toolbar">
+      <div class="preview-badge">👁 Vorschau (noch nicht gespeichert)</div>
+      <div class="preview-pages" id="previewPageBtns">
+        <button type="button" class="preview-page-btn" data-p="home">Startseite</button>
+        <button type="button" class="preview-page-btn" data-p="konzerte">Konzerte</button>
+        <button type="button" class="preview-page-btn" data-p="verschiedenes">Verschiedenes</button>
+        <button type="button" class="preview-page-btn" data-p="lebenslauf">Lebenslauf</button>
+        <button type="button" class="preview-page-btn" data-p="unterricht">Unterricht</button>
+        <button type="button" class="preview-page-btn" data-p="hoerbeispiele">Hörbeispiele</button>
+        <button type="button" class="preview-page-btn" data-p="links">Links</button>
+      </div>
+      <div style="display: flex; gap: 0.5rem;">
+        <button type="button" id="closePreviewBtn" class="btn btn-secondary" style="padding: 0.45rem 0.9rem; font-size: 0.85rem;">← Weiter bearbeiten</button>
+        <button type="button" id="saveFromPreviewBtn" class="btn btn-primary" style="padding: 0.45rem 0.9rem; font-size: 0.85rem;">💾 Jetzt speichern</button>
+      </div>
+    </div>
+    <iframe id="previewFrame" class="preview-frame" title="Vorschau"></iframe>
   </div>
 
   <div id="toast" class="status-toast"></div>
@@ -918,6 +996,290 @@
     }
 
     document.getElementById('saveBtn').addEventListener('click', performSave);
+
+    // Live Preview before saving
+    const PREVIEW_NAV = [
+      ['home', 'HOME'],
+      ['konzerte', 'KONZERTE'],
+      ['verschiedenes', 'VERSCHIEDENES'],
+      ['lebenslauf', 'LEBENSLAUF'],
+      ['unterricht', 'UNTERRICHT'],
+      ['hoerbeispiele', 'HÖRBEISPIELE'],
+      ['links', 'LINKS']
+    ];
+
+    function relAssetPreview(pathStr) {
+      const s = String(pathStr || '');
+      return s.startsWith('/') ? '.' + s : s;
+    }
+
+    function getAktuellPreview() {
+      const h = siteData.home;
+      if (h.aktuellMode === 'auto') {
+        const today = new Date().toISOString().slice(0, 10);
+        const upcoming = (siteData.concerts || [])
+          .filter(c => (c.dateIso || '') >= today)
+          .sort((a, b) => (a.dateIso || '').localeCompare(b.dateIso || ''));
+        const pick = upcoming[0] || (siteData.concerts || [])[0];
+        if (pick) {
+          return {
+            label: 'Aktuell:',
+            dateDisplay: formatConcertDateDe(pick.dateIso, pick.time),
+            location: pick.location || '',
+            program: pick.title || '',
+            note: pick.details || ''
+          };
+        }
+      }
+      return h.aktuellConcert || {};
+    }
+
+    function buildPreviewHtml(pageKey) {
+      collectHomeAndContact();
+      siteData.unterricht.heading = document.getElementById('untHeading').value;
+      siteData.unterricht.subheading = document.getElementById('untSubheading').value;
+
+      const baseHref = new URL('../', window.location.href).href;
+      const site = siteData.site;
+      const contact = site.contact;
+
+      const navHtml = PREVIEW_NAV.map(([k, label]) =>
+        `<li><a href="#preview-${k}" data-preview-page="${k}"${k === pageKey ? ' class="active"' : ''}>${escapeHtml(label)}</a></li>`
+      ).join('\n          ');
+
+      let bodyHtml = '';
+
+      if (pageKey === 'home') {
+        const home = siteData.home;
+        const akt = getAktuellPreview();
+        const prog = [akt.program, akt.note].filter(Boolean).join('\n').trim();
+        bodyHtml = `
+          <section class="page-banner home-hero" style="background-image: url('${escapeAttr(relAssetPreview(home.heroImage))}');">
+            <div class="page-banner-content">
+              <h1>${escapeHtml(home.heroTitle)}</h1>
+              <a href="#preview-konzerte" data-preview-page="konzerte" class="btn-hero">${escapeHtml(home.heroButtonLabel)}</a>
+            </div>
+          </section>
+          <div class="container">
+            <div class="home-grid">
+              <div class="home-card home-card-aktuell">
+                <span class="aktuell-badge">${escapeHtml(akt.label || 'Aktuell:')}</span>
+                <div class="aktuell-date">${escapeHtml(akt.dateDisplay || '')}</div>
+                <div class="aktuell-location">${escapeHtml(akt.location || '')}</div>
+                <div class="aktuell-program">${escapeHtml(prog)}</div>
+                <a href="#preview-konzerte" data-preview-page="konzerte" class="aktuell-link">Alle Konzertdaten →</a>
+              </div>
+              <div class="home-card home-card-about">
+                <h2>${escapeHtml(home.aboutTitle)}</h2>
+                <p>${escapeHtml(home.aboutText)}</p>
+              </div>
+            </div>
+            <div class="home-Listen-banner">
+              <div class="home-nature-photo" style="background-image: url('${escapeAttr(relAssetPreview(home.secondaryImage))}');"></div>
+              <div class="home-listen-box" style="background-image: url('${escapeAttr(relAssetPreview(home.listenImage))}');">
+                <a href="#preview-hoerbeispiele" data-preview-page="hoerbeispiele">${escapeHtml(home.listenTitle)}</a>
+              </div>
+            </div>
+          </div>`;
+      } else if (pageKey === 'konzerte') {
+        const sorted = [...(siteData.concerts || [])].sort((a, b) => (b.dateIso || '').localeCompare(a.dateIso || ''));
+        const items = sorted.map((c, idx) => {
+          const cls = idx === 0 ? 'concert-item upcoming' : 'concert-item';
+          const link = c.linkUrl
+            ? `<a href="${escapeAttr(c.linkUrl)}" target="_blank" rel="noopener noreferrer" class="concert-link">${escapeHtml(c.linkLabel || c.linkUrl)} →</a>`
+            : '';
+          return `
+            <article class="${cls}">
+              <div class="concert-meta">
+                <div class="concert-date">${escapeHtml(formatConcertDateDe(c.dateIso, c.time))}</div>
+                <div class="concert-location">${escapeHtml(c.location || '')}</div>
+              </div>
+              <div class="concert-body">
+                <h3>${escapeHtml(c.title || '')}</h3>
+                <div class="concert-details">${escapeHtml(c.details || '')}</div>${link}
+              </div>
+            </article>`;
+        }).join('\n');
+        bodyHtml = `
+          <section class="page-banner banner-konzerte" style="background-image: url('./assets/images/banner-konzerte.jpg');">
+            <div class="page-banner-content"><h1>KONZERTE</h1></div>
+          </section>
+          <div class="container"><div class="concerts-list">${items}</div></div>`;
+      } else if (pageKey === 'verschiedenes') {
+        const v = siteData.verschiedenes;
+        const cards = (v.cards || []).map(card => `
+          <div class="feature-card color-${escapeAttr(card.color || 'sage')}">
+            <h3>${escapeHtml(card.title || '')}</h3>
+            <div class="subtitle">${escapeHtml(card.subtitle || '')}</div>
+            <p>${escapeHtml(card.text || '')}</p>
+          </div>`).join('\n');
+        bodyHtml = `
+          <section class="page-banner banner-verschiedenes" style="background-image: url('${escapeAttr(relAssetPreview(v.bannerImage))}');">
+            <div class="page-banner-content"><h1>${escapeHtml(v.title)}</h1></div>
+          </section>
+          <div class="container"><div class="feature-cards-grid">${cards}</div></div>`;
+      } else if (pageKey === 'lebenslauf') {
+        const leb = siteData.lebenslauf;
+        const paras = (leb.paragraphs || []).map(p => `<p>${escapeHtml(p)}</p>`).join('\n');
+        bodyHtml = `
+          <section class="page-banner banner-lebenslauf" style="background-image: url('${escapeAttr(relAssetPreview(leb.bannerImage))}');">
+            <div class="page-banner-content"><h1>${escapeHtml(leb.title)}</h1></div>
+          </section>
+          <div class="container">
+            <article class="bio-card">
+              <h2>${escapeHtml(leb.heading)}</h2>
+              ${paras}
+            </article>
+          </div>`;
+      } else if (pageKey === 'unterricht') {
+        const u = siteData.unterricht;
+        const cards = (u.institutions || []).map(inst => `
+          <div class="feature-card color-${escapeAttr(inst.color || 'rose')}">
+            <h3>${escapeHtml(inst.shortName || inst.name || '')}</h3>
+            <div class="subtitle">${escapeHtml(inst.name || '')}</div>
+            <ul>${(inst.items || []).map(it => `<li>${escapeHtml(it)}</li>`).join('')}</ul>
+          </div>`).join('\n');
+        bodyHtml = `
+          <section class="page-banner banner-unterricht" style="background-image: url('${escapeAttr(relAssetPreview(u.bannerImage))}');">
+            <div class="page-banner-content"><h1>${escapeHtml(u.title)}</h1></div>
+          </section>
+          <div class="container">
+            <h2 class="section-heading">${escapeHtml(u.heading)}</h2>
+            <p style="font-size: 1.1rem; color: var(--text-muted); margin-bottom: 2rem;">${escapeHtml(u.subheading)}</p>
+            <div class="feature-cards-grid">${cards}</div>
+          </div>`;
+      } else if (pageKey === 'hoerbeispiele') {
+        const h = siteData.hoerbeispiele;
+        const playSvg = '<svg viewBox="0 0 18 20"><path d="M17.29,9.02 C18.25,9.56 18.25,10.44 17.29,10.98 L1.74,19.78 C0.78,20.33 0,19.87 0,18.76 L0,1.24 C0,0.13 0.78,-0.32 1.74,0.22 L17.29,9.02 Z"></path></svg>';
+        const albums = (h.albums || []).map(album => `
+          <section class="album-section">
+            <div class="album-header">
+              <h2>${escapeHtml(album.title)}</h2>
+              <p>${escapeHtml(album.description)}</p>
+            </div>
+            <div class="album-grid">
+              <img src="${escapeAttr(relAssetPreview(album.coverImage))}" alt="${escapeAttr(album.title)}" class="album-cover" />
+              <div class="tracks-list">
+                ${(album.tracks || []).map(t => `
+                  <div class="audio-track" data-duration="${escapeAttr(t.duration || '00:30')}">
+                    <button type="button" class="play-btn">${playSvg}</button>
+                    <div class="track-info">
+                      <div class="track-title-row">
+                        <div><span class="track-title">${escapeHtml(t.title)}</span>${t.subtitle ? `<span class="track-subtitle">${escapeHtml(t.subtitle)}</span>` : ''}</div>
+                        <span class="track-time">00:00 / ${escapeHtml(t.duration || '00:30')}</span>
+                      </div>
+                      <input type="range" class="track-progress" min="0" max="30" step="0.1" value="0" />
+                    </div>
+                    <audio preload="metadata" src="${escapeAttr(relAssetPreview(t.audioUrl))}"></audio>
+                  </div>`).join('\n')}
+              </div>
+            </div>
+          </section>`).join('\n');
+        bodyHtml = `
+          <section class="page-banner banner-hoerbeispiele" style="background-image: url('${escapeAttr(relAssetPreview(h.bannerImage))}');">
+            <div class="page-banner-content"><h1>${escapeHtml(h.title)}</h1></div>
+          </section>
+          <div class="container">${albums}</div>`;
+      } else if (pageKey === 'links') {
+        const l = siteData.links;
+        const cards = (l.items || []).map(item => `
+          <a href="${escapeAttr(item.url)}" target="_blank" rel="noopener noreferrer" class="link-card">
+            <div>
+              <h3>${escapeHtml(item.title)}</h3>
+              <p>${escapeHtml(item.description || '')}</p>
+            </div>
+            <span>Website öffnen →</span>
+          </a>`).join('\n');
+        bodyHtml = `
+          <section class="page-banner banner-links" style="background-image: url('${escapeAttr(relAssetPreview(l.bannerImage))}');">
+            <div class="page-banner-content"><h1>${escapeHtml(l.title)}</h1></div>
+          </section>
+          <div class="container">
+            <h2 class="section-heading">${escapeHtml(l.note || 'Links')}</h2>
+            <div class="links-grid">${cards}</div>
+          </div>`;
+      }
+
+      return `<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <base href="${escapeAttr(baseHref)}" />
+  <link rel="stylesheet" href="./assets/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="#preview-home" data-preview-page="home" class="brand">
+        <img src="./assets/images/logo.png" alt="Logo" />
+        <span>${escapeHtml(site.title)}</span>
+      </a>
+      <button class="nav-toggle" aria-label="Menü öffnen">☰</button>
+      <nav class="site-nav" aria-label="Hauptnavigation">
+        <ul>${navHtml}</ul>
+      </nav>
+    </div>
+  </header>
+  <main>${bodyHtml}</main>
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-contact">
+        <p><strong>${escapeHtml(contact.name)}</strong></p>
+        <p>${escapeHtml(contact.street)}, ${escapeHtml(contact.city)}</p>
+        <p><a href="mailto:${escapeAttr(contact.email)}">${escapeHtml(contact.emailDisplay)}</a> · <a href="tel:${escapeAttr((contact.phone || '').replace(/\s+/g, ''))}">${escapeHtml(contact.phone)}</a></p>
+      </div>
+      <div class="footer-social">
+        <a href="${escapeAttr(contact.facebookUrl)}" target="_blank" rel="noopener noreferrer">Auf Facebook folgen</a>
+      </div>
+    </div>
+  </footer>
+  <script src="./assets/site.js"><\/script>
+  <script>
+    document.querySelectorAll('[data-preview-page]').forEach(el => {
+      el.addEventListener('click', (e) => {
+        e.preventDefault();
+        window.parent.postMessage({ type: 'switchPreviewPage', page: el.dataset.previewPage }, '*');
+      });
+    });
+  <\/script>
+</body>
+</html>`;
+    }
+
+    function showPreviewPage(pageKey) {
+      document.querySelectorAll('.preview-page-btn').forEach(b => {
+        b.classList.toggle('active', b.dataset.p === pageKey);
+      });
+      const frame = document.getElementById('previewFrame');
+      frame.srcdoc = buildPreviewHtml(pageKey);
+    }
+
+    document.getElementById('previewBtn').addEventListener('click', () => {
+      const activeTab = document.querySelector('.tab-btn.active')?.dataset.tab || 'konzerte';
+      const initialPage = ['home', 'konzerte', 'lebenslauf', 'unterricht', 'links'].includes(activeTab) ? activeTab : 'konzerte';
+      document.getElementById('previewOverlay').classList.add('open');
+      showPreviewPage(initialPage);
+    });
+
+    document.getElementById('closePreviewBtn').addEventListener('click', () => {
+      document.getElementById('previewOverlay').classList.remove('open');
+    });
+
+    document.getElementById('saveFromPreviewBtn').addEventListener('click', () => {
+      document.getElementById('previewOverlay').classList.remove('open');
+      performSave();
+    });
+
+    document.querySelectorAll('.preview-page-btn').forEach(btn => {
+      btn.addEventListener('click', () => showPreviewPage(btn.dataset.p));
+    });
+
+    window.addEventListener('message', (e) => {
+      if (e.data && e.data.type === 'switchPreviewPage') {
+        showPreviewPage(e.data.page);
+      }
+    });
 
     function escapeHtml(str) {
       return String(str || '')
