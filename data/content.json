@@ -33,6 +33,17 @@
   },
   "concerts": [
     {
+      "id": "concert-1794139991778",
+      "dateIso": "2026-11-08",
+      "time": "19:30",
+      "dateDisplay": "8. November 2026, 19.30 Uhr",
+      "location": "",
+      "title": "test",
+      "details": "test",
+      "linkUrl": "wef",
+      "linkLabel": "test"
+    },
+    {
       "id": "concert-01-2026-06-28",
       "dateIso": "2026-06-28",
       "time": "17:00",
