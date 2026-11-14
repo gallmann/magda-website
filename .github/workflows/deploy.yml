@@ -26,7 +26,7 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           if ! git diff --quiet; then
-            git add index.html konzerte/ verschiedenes/ lebenslauf/ unterricht/ hoerbeispiele/ links/
+            git add index.html sitemap.xml konzerte/ verschiedenes/ lebenslauf/ unterricht/ hoerbeispiele/ links/
             git commit -m "Regenerate static HTML pages from content.json"
             git push
           fi

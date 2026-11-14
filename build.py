@@ -386,6 +386,24 @@ def build_links(data: dict) -> str:
     return render_shell(data, "links", "LINKS", body)
 
 
+def build_sitemap() -> str:
+    base_url = "https://www.magda-schwerzmann.ch"
+    today = datetime.date.today().isoformat()
+    urls = []
+    for _key, _label, href in NAV_ITEMS:
+        loc = f"{base_url}/" if href == "/" else f"{base_url}{href.rstrip('/')}"
+        urls.append(f"""  <url>
+    <loc>{esc(loc)}</loc>
+    <lastmod>{today}</lastmod>
+  </url>""")
+    return (
+        '<?xml version="1.0" encoding="UTF-8"?>\n'
+        '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
+        + "\n".join(urls)
+        + "\n</urlset>\n"
+    )
+
+
 def build_all() -> None:
     data = json.loads(DATA_FILE.read_text(encoding="utf-8"))
 
@@ -397,6 +415,7 @@ def build_all() -> None:
         ROOT / "unterricht" / "index.html": build_unterricht(data),
         ROOT / "hoerbeispiele" / "index.html": build_hoerbeispiele(data),
         ROOT / "links" / "index.html": build_links(data),
+        ROOT / "sitemap.xml": build_sitemap(),
     }
 
     for path, content in outputs.items():
